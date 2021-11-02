@@ -13,4 +13,4 @@ A project to create a fully functioning, open source flight simulator in JavaScr
 - [ ] Add a settings to edit everything.
 
 # Contributing
-If you would like to contribute, please go ahead! The more people who can contribute to this project, the quicker it will be finished and the more polished it will be. Helping with the project will also help it to gain popularity, so that more people will discover it - meaning it will improve faster and faster.
+If you would like to contribute, please go ahead! The more people who can contribute to this project, the quicker it will improve and the more polished it will be. Helping with the project will also help it to gain popularity, so that more people will discover it - meaning it will improve faster and faster.
