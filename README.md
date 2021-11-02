@@ -9,7 +9,8 @@ A project to create a fully functioning, open source flight simulator in JavaScr
 - [ ] Allow the main page to download the terrain, and refresh it, etc.
 - [ ] Add physics.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
-- [ ] Add weather & lighting.
+- [ ] Add weather & realistic lighting.
+- [ ] Add emergency capabilities to aircraft.
 - [ ] Add a settings to edit everything.
 
 # Contributing
