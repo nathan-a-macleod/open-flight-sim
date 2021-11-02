@@ -2,7 +2,6 @@
 A project to create a fully functioning, open source flight simulator with good performance.
 
 # TODO:
-- [ ] Setup the node.js environment.
 - [ ] Create a page for the user to create and input a mapbox API key. This will be used for the terrain data.
 - [ ] Create a page to allow the user to choose an airport and runway to begin at.
 - [ ] Create the main page where the user can fly the airplane. 
