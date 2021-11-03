@@ -24,8 +24,9 @@ label4.pack(anchor="w", padx=50)
 label5 = tk.Label(master, bg="#FAFBFC", font=pFontStyle, text="* Copy the API access token, under the \"Access tokens\" section, and enter it below:")
 label5.pack(anchor="w", padx=50)
 
-label6 = tk.Label(master, bg="#FAFBFC", font=pFontStyleBOLD, text="Please Note: When you input your access token, it will be stored in a config.txt file in the src/ folder. You may want to delete this once you have finished using the program.")
-label6.pack(anchor="w", padx=25)
+# THIS IS NOT THE CASE ANYMORE - so the warning message is not needed
+#label6 = tk.Label(master, bg="#FAFBFC", font=pFontStyleBOLD, text="Please Note: When you input your access token, it will be stored in a config.txt file in the src/ folder. You may want to delete this once you have finished using the program.")
+#label6.pack(anchor="w", padx=25)
 
 tokenFieldText = tk.StringVar()
 tokenField = tk.Entry(master, textvariable=tokenFieldText)
