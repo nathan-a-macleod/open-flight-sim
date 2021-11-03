@@ -3,7 +3,8 @@ A project to create a fully functioning, open source flight simulator with good 
 
 # TODO:
 - [x] Create a page for the user to create and input a mapbox API key. This will be used for the terrain data.
-- [ ] Allow the page to validate the user's API access token.
+- [x] Allow the page to validate the user's API access token.
+- [ ] Store the access token somehow
 - [ ] Create a page to allow the user to choose an airport and runway to begin at.
 - [ ] Create the main page where the user can fly the airplane. 
 - [ ] Allow the main page to download the terrain, and refresh it, etc.
