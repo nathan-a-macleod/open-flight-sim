@@ -4,6 +4,11 @@ import requests as req
 
 master = tk.Tk()
 master["bg"] = "#FAFBFC"
+master.geometry(
+    str(master.winfo_screenwidth()) + 
+    "x" + 
+    str(master.winfo_screenheight())
+)
 
 h1FontStyle = tkFont.Font(family="Lucida Grande", size=16)
 pFontStyle = tkFont.Font(family="Lucida Grande", size=10)
@@ -57,6 +62,7 @@ def validate():
     
     except:
         displayError()
+
 tokenBtn = tk.Button(master, bg="#2a67ea", fg="white", activebackground="#5389f4", activeforeground="white", bd=0, highlightthickness=0, command=validate, text="Continue")
 tokenBtn.pack(anchor="w", padx=25, pady=(0, 25))
 
