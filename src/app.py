@@ -47,7 +47,10 @@ def validate():
             
             master.destroy()
 
-            import main.main # Run the main page
+            # start the main page
+            import main.main as main
+            main.APIAccessToken = tokenFieldText.get()
+            main.start()
 
         else:
             displayError()
