@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.font as tkFont
+import requests as req
 
 master = tk.Tk()
 master["bg"] = "#FAFBFC"
@@ -27,9 +28,27 @@ tokenField = tk.Entry(master, textvariable=tokenFieldText)
 tokenField.pack(anchor="w", padx=25, pady=12)
 
 def validate():
-    print(tokenFieldText.get())
+    def displayError():
+        resultLabel.config(text="Something went wrong while validating your API key. Please ensure you have a valid API access token associated with a valid Mapbox account, and that you entered it correctly.")
+        resultLabel.pack(anchor="w", padx=25)
+        tokenBtn.config(text="Try Again")
 
+    try:
+        r = req.get("https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/tilequery/-122.42901,37.80633.json?radius=10&access_token=" + tokenFieldText.get())
+    
+        if r.status_code == 200:
+            resultLabel.config(text="Valid API access key, loading...")
+            resultLabel.pack(anchor="w", padx=25)
+
+        else:
+            displayError()
+    
+    except:
+        displayError()
 tokenBtn = tk.Button(master, bg="#2a67ea", fg="white", activebackground="#5389f4", activeforeground="white", bd=0, highlightthickness=0, command=validate, text="Continue")
 tokenBtn.pack(anchor="w", padx=25, pady=(0, 25))
+
+resultLabel = tk.Label(master, bg="#FAFBFC", font=pFontStyle, text="")
+
 
 tk.mainloop()
