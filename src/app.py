@@ -44,6 +44,10 @@ def validate():
         if r.status_code == 200:
             resultLabel.config(text="Valid API access key, loading...")
             resultLabel.pack(anchor="w", padx=25)
+            
+            master.destroy()
+
+            import main.main # Run the main page
 
         else:
             displayError()
@@ -54,6 +58,5 @@ tokenBtn = tk.Button(master, bg="#2a67ea", fg="white", activebackground="#5389f4
 tokenBtn.pack(anchor="w", padx=25, pady=(0, 25))
 
 resultLabel = tk.Label(master, bg="#FAFBFC", font=pFontStyle, text="")
-
 
 tk.mainloop()
