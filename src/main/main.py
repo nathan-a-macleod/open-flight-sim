@@ -1,6 +1,5 @@
-# These values are provided by /src/app.py
-APIAccessToken = ""
+f = open("config.txt", "r")
+APIAccessToken = f.read().split("\n")[0]
+f.close()
 
-# This function is run by /src/app.py
-def start():
-    print(APIAccessToken)
+print(APIAccessToken)

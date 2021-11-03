@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.font as tkFont
 import requests as req
+import os
 
 master = tk.Tk()
 master["bg"] = "#FAFBFC"
@@ -29,9 +30,8 @@ label4.pack(anchor="w", padx=50)
 label5 = tk.Label(master, bg="#FAFBFC", font=pFontStyle, text="* Copy the API access token, under the \"Access tokens\" section, and enter it below:")
 label5.pack(anchor="w", padx=50)
 
-# THIS IS NOT THE CASE ANYMORE - so the warning message is not needed
-#label6 = tk.Label(master, bg="#FAFBFC", font=pFontStyleBOLD, text="Please Note: When you input your access token, it will be stored in a config.txt file in the src/ folder. You may want to delete this once you have finished using the program.")
-#label6.pack(anchor="w", padx=25)
+label6 = tk.Label(master, bg="#FAFBFC", font=pFontStyleBOLD, text="Please Note: When you input your access token, it will be stored in a config.txt file in the src/ folder. You may want to delete this once you have finished using the program.")
+label6.pack(anchor="w", padx=25)
 
 tokenFieldText = tk.StringVar()
 tokenField = tk.Entry(master, textvariable=tokenFieldText)
@@ -52,10 +52,16 @@ def validate():
             
             master.destroy()
 
-            # start the main page
-            import main.main as main
-            main.APIAccessToken = tokenFieldText.get()
-            main.start()
+            # store the validated API access token 
+            if os.path.exists("config.txt"):
+                os.remove("config.txt")
+
+            f = open("config.txt", "a")
+            f.writelines([tokenFieldText.get()])
+            f.close()
+
+            # Run the main file
+            import main.main
 
         else:
             displayError()
