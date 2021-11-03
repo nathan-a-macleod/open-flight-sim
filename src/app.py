@@ -7,6 +7,7 @@ master["bg"] = "#FAFBFC"
 
 h1FontStyle = tkFont.Font(family="Lucida Grande", size=16)
 pFontStyle = tkFont.Font(family="Lucida Grande", size=10)
+pFontStyleBOLD = tkFont.Font(family="Lucida Grande", size=10, weight=tkFont.BOLD)
 
 label1 = tk.Label(master, bg="#FAFBFC", font=h1FontStyle, text="Connect to your Mapbox account")
 label1.pack(anchor="w", padx=25, pady=25)
@@ -22,6 +23,9 @@ label4.pack(anchor="w", padx=50)
 
 label5 = tk.Label(master, bg="#FAFBFC", font=pFontStyle, text="* Copy the API access token, under the \"Access tokens\" section, and enter it below:")
 label5.pack(anchor="w", padx=50)
+
+label6 = tk.Label(master, bg="#FAFBFC", font=pFontStyleBOLD, text="Please Note: When you input your access token, it will be stored in a config.txt file in the src/ folder. You may want to delete this once you have finished using the program.")
+label6.pack(anchor="w", padx=25)
 
 tokenFieldText = tk.StringVar()
 tokenField = tk.Entry(master, textvariable=tokenFieldText)
