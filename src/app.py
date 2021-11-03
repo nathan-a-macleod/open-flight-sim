@@ -61,7 +61,7 @@ def validate():
             f.close()
 
             # Run the main file
-            import main.main
+            import setup.setup
 
         else:
             displayError()
