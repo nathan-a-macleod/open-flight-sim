@@ -15,6 +15,8 @@ A project to create a fully functioning, open source flight simulator with good 
 - [ ] Add a settings to edit everything.
 
 # Building
+* `git clone https://github.com/nathan-a-macleod/open-flight-sim.git`
+* `cd open-flight-sim/open-flight-sim`
 * `npm i`
 * `npm start`
 
