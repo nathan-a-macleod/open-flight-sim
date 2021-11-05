@@ -1,4 +1,8 @@
-if (sessionStorage.getItem("APIToken") == null){
+let userAPIToken;
+
+if (sessionStorage.getItem("userAPIToken") == null){
+    document.getElementById("APITokenDiv").style.display = "block";
+
     document.getElementById("CheckAPIToken").addEventListener("click", function(){
         let APITokenResult = document.getElementById("APITokenResult");
         APITokenResult.innerHTML = "";
@@ -13,11 +17,14 @@ if (sessionStorage.getItem("APIToken") == null){
         xhr.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200){
                 APITokenResult.innerHTML = "Valid API access key, loading...";
-                sessionStorage.setItem("APIToken", APIToken);
+                userAPIToken = APIToken;
+                sessionStorage.setItem("userAPIToken", APIToken);
                 document.getElementById("APITokenDiv").style.display = "none";
+                document.getElementById("findLocationDiv").style.display = "block";
             }
         }
     });
 } else {
-    document.getElementById("APITokenDiv").style.display = "none";
+    userAPIToken = sessionStorage.getItem("userAPIToken");
+    document.getElementById("findLocationDiv").style.display = "block";
 }

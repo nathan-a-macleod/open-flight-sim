@@ -6,7 +6,26 @@
         <link rel="stylesheet" href='/static/style.css' />
     </head>
     <body>
-        <div id="APITokenDiv">
+        <div id="findLocationDiv" style="display: none;">
+            <div id="map"></div>
+            <form id="menu" autocomplete="off">
+              <!-- See a list of Mapbox-hosted public styles at -->
+              <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+              <input id="satellite-v9" type="radio" name="rtoggle" value="satellite">
+              <label for="satellite-v9">satellite</label>
+              <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked">
+              <label for="streets-v11">streets</label>
+            </form>
+            
+            <!--<form id="searchFieldForm">
+              <input id="searchField" placeholder="Search for somewhere..."></input>
+              <button id="searchFieldBtn">Search</button>
+            </form>-->
+            
+            <button id="launchBtn">Launch!</button>
+        </div>
+
+        <div id="APITokenDiv" style="display: none;">
             <h1>Connect to your Mapbox account</h1>
             <p>In order to download satellite information, you must use a valid API access token using Mapbox. Here is how to get one:</p>
             <ul>
@@ -23,5 +42,7 @@
             <p id="APITokenResult"></p>
         </div>
         <script type="text/javascript" src="/static/js/app.js"></script>
+        <script type="text/javascript" src="/static/js/airports.js"></script>
+        <script type="text/javascript" src="/static/js/findLocation.js"></script>
     </body>
 </html>
