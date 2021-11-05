@@ -1,4 +1,4 @@
-#APITokenDiv, #findLocationDiv{
+#APITokenDiv, #findLocationDiv, #map{
     position: absolute;
     background-color: #ffffff;
 
@@ -15,7 +15,29 @@
 
     padding: 16px;
     box-sizing: border-box;
-    
+
     width: 80vw;
     height: 80vh;
+}
+
+#map{
+    left: 0px;
+    top: 0px;
+
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+#menu{
+    position: absolute;
+    
+    background-color: #ffffff;
+    padding: 16px;
+    -border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    
+    left: 32px;
+    top: 32px;
 }
