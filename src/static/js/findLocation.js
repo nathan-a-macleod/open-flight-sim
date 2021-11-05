@@ -51,8 +51,6 @@ document.getElementById(chosenAirport.name).children[0].children[0].children[1].
 document.getElementById("launchBtn").addEventListener("click", function(){
   sessionStorage.setItem("latCoord", chosenAirport.latitude);
   sessionStorage.setItem("lonCoord", chosenAirport.longitude);
-  sessionStorage.setItem("radius", radiusSlider.value);
-  sessionStorage.setItem("resolution", resolutionSlider.value);
 
   document.getElementById("findLocationDiv").style.display = "none";
 });
