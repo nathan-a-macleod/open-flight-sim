@@ -6,7 +6,44 @@
         <link rel="stylesheet" href='/static/style.css' />
     </head>
     <body>
-        <script type="text/javascript" src="/static/js/app.js">p</script>
-        <h1>Hello, World</h1>
+        <section id="APITokenSection">
+            <h1>Connect to your Mapbox account</h1>
+            <p>In order to download satellite information, you must use a valid API access token using Mapbox. Here is how to get one:</p>
+            <ul>
+                <li>Go to: <a href="https://mapbox.com" target="_blank" rel="noopener noreferrer">https://mapbox.com</a>, and sign in (or create an account if you don't have one).</li>
+                <li>Once you are signed in, go to the Mapbox account page: <a href="https://account.mapbox.com" target="_blank" rel="noopener noreferrer">https://account.mapbox.com</a></li>
+                <li>Copy the API access token, under the "Access tokens" section, and enter it below:</li>
+            </ul>
+            
+            <p>Once you have entered an API key, the flight simulator will use it to download satellite imagery.</p>
+            
+            <label>Mapbox API access token:</label>
+            <input id="APIToken">
+            <button id="CheckAPIToken">Check</button>
+            <p id="APITokenResult"></p>
+            
+            <script>
+                document.getElementById("CheckAPIToken").addEventListener("click", function(){
+                    let APITokenResult = document.getElementById("APITokenResult");
+                    APITokenResult.innerHTML = "";
+                    
+                    let APIToken = document.getElementById("APIToken").value;
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', "https://api.mapbox.com/v4/mapbox.satellite/1/0/0@2x.jpg90?access_token=" + APIToken);
+                    xhr.send();
+                    
+                    APITokenResult.innerHTML = "Something went wrong while validating your API key. Please ensure you have a valid API access token associated with a valid Mapbox account.";
+                    
+                    xhr.onreadystatechange = function(){
+                        if (this.readyState == 4 && this.status == 200){
+                            APITokenResult.innerHTML = "Valid API access key, loading...";
+                            sessionStorage.setItem("APIToken", APIToken)
+                            document.getElementById("APITokenSection").style.display = "none";
+                        }
+                    }
+                });
+            </script>
+        </section>
+        <script type="text/javascript" src="/static/js/app.js"></script>
     </body>
 </html>

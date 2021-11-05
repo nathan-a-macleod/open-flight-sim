@@ -1,0 +1,21 @@
+#APITokenSection{
+    position: absolute;
+    background-color: #ffffff;
+
+    border-radius: 16px;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+
+    box-shadow: 0px 0px 25px 3px rgba(72,72,72,0.25);
+    -webkit-box-shadow: 0px 0px 25px 3px rgba(72,72,72,0.25);
+    -moz-box-shadow: 0px 0px 25px 3px rgba(72,72,72,0.25);
+    
+    left: calc(10vw);
+    top: calc(10vh);
+
+    padding: 16px;
+    box-sizing: border-box;
+    
+    width: 80vw;
+    height: 80vh;
+}
