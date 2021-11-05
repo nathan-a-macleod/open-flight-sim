@@ -8,6 +8,10 @@ let map = new mapboxgl.Map({
   antialias: true,
 });
 
+// Add navigation controls to the map widget
+map.addControl(new mapboxgl.NavigationControl());
+
+// Allow the user to switch between different map styles
 const layerList = document.getElementById('menu');
 const inputs = layerList.getElementsByTagName('input');
  
@@ -17,3 +21,29 @@ for (const input of inputs) {
     map.setStyle('mapbox://styles/mapbox/' + layerId);
   };
 }
+
+// Add airports
+let chosenAirport = airports["London Heathrow Airport"];
+
+function addAirport(airportData){
+  function resetColor(element, current){
+    if (element.name != current){
+      document.getElementById(element.name).children[0].children[0].children[1].children[0].style.fill = "#3b5998";
+    }
+  }
+
+  let airport = new mapboxgl.Marker();
+  airport = airport.setLngLat([airportData.longitude, airportData.latitude]);
+  airport.addTo(map);
+  airport.getElement().children[0].children[0].children[1].children[0].style.fill = "#3b5998"
+  airport.getElement().setAttribute("id", airportData.name);
+  
+  airport.getElement().addEventListener("click", function(){
+    chosenAirport = airportData;
+    airport.getElement().children[0].children[0].children[1].children[0].style.fill = "#e8dc5a";
+    Object.values(airports).forEach(val => resetColor(val, airportData.name));
+  });
+}
+
+Object.values(airports).forEach(val => addAirport(val));
+document.getElementById(chosenAirport.name).children[0].children[0].children[1].children[0].style.fill = "#e8dc5a";
