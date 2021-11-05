@@ -67,6 +67,10 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   addScript("/static/js/setup.js");
 
   setTimeout(function(){
+    addScript("/static/js/tile.js");
+  }, 1000);
+
+  setTimeout(function(){
     addScript("/static/js/renderLoop.js");
   }, 1000);
 });

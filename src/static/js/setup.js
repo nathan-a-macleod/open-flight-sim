@@ -8,7 +8,7 @@ let paused = true;
 
 let scene = new THREE.Scene();
 scene.background = new THREE.Color(0x7FB7DB);
-scene.fog = new THREE.Fog(0x79B2D8, 0, 10);
+scene.fog = new THREE.Fog(0x79B2D8, 0, 100);
 
 let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.001, 100000);
 camera.position.y = 10;
@@ -21,6 +21,7 @@ let renderer = new THREE.WebGLRenderer({
     canvas: canvas
 });
 
+renderer.setClearColor(0x7FB7DB);
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.gammaFactor = 1;
 renderer.outputEncoding = THREE.GammaEncoding;
@@ -28,15 +29,7 @@ renderer.physicallyCorrectLights;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-//let controls = new THREE.OrbitControls(camera, renderer.domElement);
-
-/*
-// For debugging:
-var geometry = new THREE.BoxGeometry(5, 5, 5, 5, 5, 5);
-var material = new THREE.MeshBasicMaterial({color: 0xfffff, wireframe: true});
-var cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-*/
+let controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 let sun = new THREE.DirectionalLight(0xcccccc);
 sun.intensity = 1;
