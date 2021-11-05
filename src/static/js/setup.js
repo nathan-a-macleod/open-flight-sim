@@ -7,7 +7,7 @@ let canvas = document.getElementById("mainCanvas");
 let paused = true;
 
 let scene = new THREE.Scene();
-scene.background = 0x7FB7DB;
+scene.background = new THREE.Color(0x7FB7DB);
 scene.fog = new THREE.Fog(0x79B2D8, 0, 10);
 
 let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.001, 100000);
@@ -30,10 +30,13 @@ document.body.appendChild(renderer.domElement);
 
 //let controls = new THREE.OrbitControls(camera, renderer.domElement);
 
+/*
+// For debugging:
 var geometry = new THREE.BoxGeometry(5, 5, 5, 5, 5, 5);
 var material = new THREE.MeshBasicMaterial({color: 0xfffff, wireframe: true});
 var cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
+*/
 
 let sun = new THREE.DirectionalLight(0xcccccc);
 sun.intensity = 1;
