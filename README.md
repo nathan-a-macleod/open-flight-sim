@@ -7,7 +7,8 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Store the access token somehow
 - [x] Create a page to allow the user to choose an airport and runway to begin at.
 - [x] Create the main page where the user can fly the airplane. 
-- [ ] Allow the main page to download the terrain, and refresh it, etc.
+- [x] Allow the main page to download the terrain, and refresh it, etc.
+- [ ] Allow each tile of the terrain to have elevation data.
 - [ ] Add physics.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
 - [ ] Add weather & realistic lighting.
