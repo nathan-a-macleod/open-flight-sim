@@ -48,9 +48,25 @@ function addAirport(airportData){
 Object.values(airports).forEach(val => addAirport(val));
 document.getElementById(chosenAirport.name).children[0].children[0].children[1].children[0].style.fill = "#e8dc5a";
 
+let latCoord;
+let lonCoord;
 document.getElementById("launchBtn").addEventListener("click", function(){
+  function addScript(src){
+    let script = document.createElement("script");
+    script.setAttribute("src", src);
+    document.body.appendChild(script);
+  }
+
   sessionStorage.setItem("latCoord", chosenAirport.latitude);
   sessionStorage.setItem("lonCoord", chosenAirport.longitude);
+  latCoord = chosenAirport.latitude;
+  lonCoord = chosenAirport.longitude;
 
   document.getElementById("findLocationDiv").style.display = "none";
+
+  addScript("/static/js/setup.js");
+
+  setTimeout(function(){
+    addScript("/static/js/renderLoop.js");
+  }, 1000);
 });

@@ -8,6 +8,8 @@
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     </head>
     <body>
+        <canvas id="mainCanvas"></canvas>
+
         <div id="findLocationDiv" style="display: none;">
             <div id="map"></div>
             <form id="menu" autocomplete="off">
@@ -43,6 +45,8 @@
             <button id="CheckAPIToken">Check</button>
             <p id="APITokenResult"></p>
         </div>
+        
+        <script type="text/javascript" src="/static/lib/three.min.js"></script>
         <script type="text/javascript" src="/static/js/app.js"></script>
         <script type="text/javascript" src="/static/js/airports.js"></script>
         <script type="text/javascript" src="/static/js/findLocation.js"></script>
