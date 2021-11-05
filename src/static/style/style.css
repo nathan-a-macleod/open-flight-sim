@@ -12,6 +12,11 @@ button:hover{
     cursor: pointer
 }
 
+.mapboxgl-ctrl-top-right{
+    top: 22px !important;
+    right: 22px !important;
+}
+
 #APITokenDiv, #findLocationDiv, #map{
     position: absolute;
     background-color: #ffffff;
@@ -64,6 +69,6 @@ button:hover{
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     
-    right: 32px;
+    right: calc(32px + 29px + 32px);
     top: 32px;
 }
