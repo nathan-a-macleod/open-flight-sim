@@ -37,7 +37,7 @@ function addAirport(airportData){
   airport.addTo(map);
   airport.getElement().children[0].children[0].children[1].children[0].style.fill = "#3b5998"
   airport.getElement().setAttribute("id", airportData.name);
-  
+
   airport.getElement().addEventListener("click", function(){
     chosenAirport = airportData;
     airport.getElement().children[0].children[0].children[1].children[0].style.fill = "#e8dc5a";
@@ -47,3 +47,12 @@ function addAirport(airportData){
 
 Object.values(airports).forEach(val => addAirport(val));
 document.getElementById(chosenAirport.name).children[0].children[0].children[1].children[0].style.fill = "#e8dc5a";
+
+document.getElementById("launchBtn").addEventListener("click", function(){
+  sessionStorage.setItem("latCoord", chosenAirport.latitude);
+  sessionStorage.setItem("lonCoord", chosenAirport.longitude);
+  sessionStorage.setItem("radius", radiusSlider.value);
+  sessionStorage.setItem("resolution", resolutionSlider.value);
+
+  document.getElementById("findLocationDiv").style.display = "none";
+});
