@@ -41,3 +41,16 @@
     left: 32px;
     top: 32px;
 }
+
+#launchBtn{
+    position: absolute;
+    
+    background-color: #ffffff;
+    padding: 16px;
+    -border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    
+    right: 32px;
+    top: 32px;
+}
