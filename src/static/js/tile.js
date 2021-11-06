@@ -24,8 +24,13 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
     tile.rotation.x += -Math.PI / 2;
     scene.add(tile);
     
+    // Add elevation data to the tile
+    let canv = document.createElement("canvas");
+    document.body.appendChild(canv);
+    
+    
     for (let i = 1; i < tileGeometry.attributes.position.array.length; i+=3){
-        
+        let vertex = tileGeometry.attributes.position.array[i];
     }
 }
 
@@ -45,5 +50,5 @@ function addTerrainTileGrid9(zoomLevel, tileSize, lonOffset, latOffset, loops){
   addTerrainTile(zoomLevel, tileSize, +1 + lonOffset, 1 + latOffset, loops);
 }
 
-//addTerrainTileGrid9(14, 15, 0, 0, 4);
-addTerrainTile(14, 10, 0, 0, 10)
+addTerrainTileGrid9(13, 10, 0, 0, 4);
+//addTerrainTile(14, 10, 0, 0, 10)
