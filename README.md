@@ -15,11 +15,11 @@ A project to create a fully functioning, open source flight simulator with good 
 - [ ] Add emergency capabilities to aircraft.
 - [ ] Add a settings to edit everything.
 
-# Building
+# How to use
+* `pip3 install flask`
 * `git clone https://github.com/nathan-a-macleod/open-flight-sim.git`
-* `cd open-flight-sim/open-flight-sim`
-* `npm i`
-* `npm start`
+* `cd open-flight-sim/src`
+* `python3 app.py`
 
 # Contributing
 If you would like to contribute, please go ahead! The more people who can contribute to this project, the quicker it will improve and the more polished it will be. Helping with the project will also help it to gain popularity, so that more people will discover it - meaning it will improve faster and faster.
