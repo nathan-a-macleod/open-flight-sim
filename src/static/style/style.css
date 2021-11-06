@@ -5,9 +5,11 @@ body{
 
 button{
     background-color: #3b5998;
+
     padding: 8px;
     padding-left: 16px;
     padding-right: 16px;
+
     color: white;
     border: none;
     border-radius: 8px;
@@ -67,8 +69,11 @@ button:hover{
 #menu{
     position: absolute;
     
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    
     background-color: #ffffff;
-    padding: 16px;
     -border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;

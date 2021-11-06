@@ -34,4 +34,5 @@ if (sessionStorage.getItem("userAPIToken") == null){
 } else {
     userAPIToken = sessionStorage.getItem("userAPIToken");
     document.getElementById("findLocationDiv").style.display = "block";
+    addScript("/static/js/findLocation.js");
 }
