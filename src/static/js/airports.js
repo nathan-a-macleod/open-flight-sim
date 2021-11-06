@@ -10,5 +10,11 @@ let airports = {
         "latitude": 51.6090539,
         "runway": "22",
         "name": "Swansea Airport"
+    },
+    "Courchevel Altiport": {
+        "longitude": 6.6371775,
+        "latitude": 45.3993272,
+        "runway": "22",
+        "name": "Courchevel Altiport"
     }
 }

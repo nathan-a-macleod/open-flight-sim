@@ -26,11 +26,38 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
     
     // Add elevation data to the tile
     let canv = document.createElement("canvas");
+
     document.body.appendChild(canv);
+    let ctx = canv.getContext("2d");
     
-    
-    for (let i = 1; i < tileGeometry.attributes.position.array.length; i+=3){
-        let vertex = tileGeometry.attributes.position.array[i];
+    elevationImg = new Image();
+    elevationImg.crossOrigin = "Anonymous";
+    elevationImg.src = 'https://api.mapbox.com/v4/mapbox.terrain-rgb/' + 
+        zoomLevel + 
+        '/' + 
+        parseInt(lon2tile(lonCoord, zoomLevel) + lonOffset) + 
+        '/' + 
+        parseInt(lat2tile(latCoord, zoomLevel) + latOffset) + 
+        '@2x.jpg90?access_token=' +
+        userAPIToken;
+
+    elevationImg.onload = function(){
+        ctx.drawImage(elevationImg, 0, 0, loops, loops);
+
+        for (let y = 0; y < loops; y++){
+            for (let x = 0; x < loops; x++){
+                let value = ctx.getImageData(x, y, 1, 1).data;
+                let red = value[0];
+                let green = value[1];
+                let blue = value[2];
+
+                let height = -10000 + ((red * 256 * 256 + green * 256 + blue) * 0.1);
+            }
+        }
+        
+        for (let i = 1; i < tileGeometry.attributes.position.array.length; i+=3){
+            let vertex = tileGeometry.attributes.position.array[i];
+        }
     }
 }
 
@@ -50,5 +77,5 @@ function addTerrainTileGrid9(zoomLevel, tileSize, lonOffset, latOffset, loops){
   addTerrainTile(zoomLevel, tileSize, +1 + lonOffset, 1 + latOffset, loops);
 }
 
-addTerrainTileGrid9(13, 10, 0, 0, 4);
-//addTerrainTile(14, 10, 0, 0, 10)
+addTerrainTileGrid9(14, 10, 0, 0, 15);
+//addTerrainTile(14, 10, 0, 0, 15)

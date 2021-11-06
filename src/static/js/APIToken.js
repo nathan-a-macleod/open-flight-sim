@@ -1,6 +1,7 @@
 function addScript(src){
     let script = document.createElement("script");
     script.setAttribute("src", src);
+    script.setAttribute("type", "text/javascript");
     document.body.appendChild(script);
 }
 
@@ -20,7 +21,7 @@ if (sessionStorage.getItem("userAPIToken") == null){
         
         APITokenResult.innerHTML = "Something went wrong while validating your API key. Please ensure you have a valid API access token associated with a valid Mapbox account.";
         
-        xhr.onreadystatechange = function(){
+        xhr.onreadystatechange = function(){    
             if (this.readyState == 4 && this.status == 200){
                 APITokenResult.innerHTML = "Valid API access key, loading...";
                 userAPIToken = APIToken;
