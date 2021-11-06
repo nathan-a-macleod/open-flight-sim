@@ -15,7 +15,7 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
         userAPIToken
     );
     
-    let tileGeometry = new THREE.PlaneBufferGeometry(size, size, size, loops, loops, loops);
+    let tileGeometry = new THREE.PlaneBufferGeometry(size, size, loops, loops);
     let tileMaterial = new THREE.MeshBasicMaterial({map: texture, wireframe: false});
     let tile = new THREE.Mesh(tileGeometry, tileMaterial);
     tile.name = "tile";
@@ -26,6 +26,9 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
     
     // Add elevation data to the tile
     let canv = document.createElement("canvas");
+
+    canv.width = loops;
+    canv.height = loops;
 
     document.body.appendChild(canv);
     let ctx = canv.getContext("2d");
@@ -93,5 +96,5 @@ function addTerrainTileGrid9(zoomLevel, tileSize, lonOffset, latOffset, loops){
   addTerrainTile(zoomLevel, tileSize, +1 + lonOffset, 1 + latOffset, loops);
 }
 
-addTerrainTileGrid9(14, 10, 0, 0, 15);
+addTerrainTileGrid9(14, 10, 0, 0, 150);
 //addTerrainTile(14, 10, 0, 0, 15)
