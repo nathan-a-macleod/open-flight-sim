@@ -15,7 +15,7 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
         userAPIToken
     );
     
-    let tileGeometry = new THREE.PlaneGeometry(size, size, size, loops, loops, loops);
+    let tileGeometry = new THREE.PlaneBufferGeometry(size, size, size, loops, loops, loops);
     let tileMaterial = new THREE.MeshBasicMaterial({map: texture, wireframe: false});
     let tile = new THREE.Mesh(tileGeometry, tileMaterial);
     tile.name = "tile";
@@ -42,6 +42,8 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
         userAPIToken;
 
     elevationImg.onload = function(){
+        let elevations = [];
+
         ctx.drawImage(elevationImg, 0, 0, loops, loops);
 
         for (let y = 0; y < loops; y++){
@@ -52,12 +54,28 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
                 let blue = value[2];
 
                 let height = -10000 + ((red * 256 * 256 + green * 256 + blue) * 0.1);
+
+                elevations.push(height);
             }
         }
+
+        tileGeometry.attributes.position.array[2] = 10;
+        tileGeometry.attributes.position.array[5] = 9;
+        tileGeometry.attributes.position.array[8] = 7;
+        tileGeometry.attributes.position.array[11] = 6;
+        tileGeometry.attributes.position.array[14] = 4;
         
-        for (let i = 1; i < tileGeometry.attributes.position.array.length; i+=3){
-            let vertex = tileGeometry.attributes.position.array[i];
+        let iterationNum = 0;
+        for (let i = 2; i < tileGeometry.attributes.position.array.length; i+=3){
+            //let vertex = tileGeometry.attributes.position.array[i];
+            //vertex = Math.random() * 10;
+            //tileGeometry.getAttribute('position').array[i] += elevations[i / 3] / 1000;
+            
+            //tileGeometry.attributes.position.array[i] = elevations[iterationNum] / 1000;
+            iterationNum++;
         }
+
+        tileGeometry.getAttribute("position").needsUpdate = true;
     }
 }
 
