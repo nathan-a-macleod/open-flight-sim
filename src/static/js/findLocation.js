@@ -50,11 +50,20 @@ document.getElementById(chosenAirport.name).children[0].children[0].children[1].
 
 let latCoord;
 let lonCoord;
+let resolution;
 document.getElementById("launchBtn").addEventListener("click", function(){
   sessionStorage.setItem("latCoord", chosenAirport.latitude);
   sessionStorage.setItem("lonCoord", chosenAirport.longitude);
   latCoord = chosenAirport.latitude;
   lonCoord = chosenAirport.longitude;
+
+  if (resolution == "pathetic") resolution = 9;
+  if (resolution == "low") resolution = 10;
+  if (resolution == "medium") resolution = 12;
+  if (resolution == "high") resolution = 13;
+  if (resolution == "ultra") resolution = 15;
+  if (resolution == "insane") resolution = 17;
+  sessionStorage.setItem("resolution", document.getElementById("resolution").value);
 
   document.getElementById("findLocationDiv").style.display = "none";
 
