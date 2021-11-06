@@ -82,7 +82,7 @@ button:hover{
     top: 32px;
 }
 
-#resolution{
+#resolutionElem{
     position: absolute;
 
     padding: 8px;
