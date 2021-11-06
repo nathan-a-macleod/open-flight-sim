@@ -59,23 +59,21 @@ function addTerrainTile(zoomLevel, size, lonOffset, latOffset, loops){
             }
         }
 
-        tileGeometry.attributes.position.array[2] = 10;
-        tileGeometry.attributes.position.array[5] = 9;
-        tileGeometry.attributes.position.array[8] = 7;
-        tileGeometry.attributes.position.array[11] = 6;
-        tileGeometry.attributes.position.array[14] = 4;
-        
         let iterationNum = 0;
-        for (let i = 2; i < tileGeometry.attributes.position.array.length; i+=3){
+        for (let i = 0; i < tileGeometry.attributes.position.array.length; i++){
             //let vertex = tileGeometry.attributes.position.array[i];
             //vertex = Math.random() * 10;
             //tileGeometry.getAttribute('position').array[i] += elevations[i / 3] / 1000;
             
-            //tileGeometry.attributes.position.array[i] = elevations[iterationNum] / 1000;
+            tileGeometry.attributes.position.array[i * 3 + 2] = elevations[iterationNum] / 1000;
             iterationNum++;
         }
 
         tileGeometry.getAttribute("position").needsUpdate = true;
+
+        canv.parentElement.removeChild(canv);
+        canv = "";
+        ctx = "";
     }
 }
 
