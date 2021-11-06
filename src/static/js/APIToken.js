@@ -1,3 +1,9 @@
+function addScript(src){
+    let script = document.createElement("script");
+    script.setAttribute("src", src);
+    document.body.appendChild(script);
+}
+
 let userAPIToken;
 
 if (sessionStorage.getItem("userAPIToken") == null){
@@ -21,6 +27,7 @@ if (sessionStorage.getItem("userAPIToken") == null){
                 sessionStorage.setItem("userAPIToken", APIToken);
                 document.getElementById("APITokenDiv").style.display = "none";
                 document.getElementById("findLocationDiv").style.display = "block";
+                addScript("/static/js/findLocation.js");
             }
         }
     });

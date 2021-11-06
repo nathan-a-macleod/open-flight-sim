@@ -51,12 +51,6 @@ document.getElementById(chosenAirport.name).children[0].children[0].children[1].
 let latCoord;
 let lonCoord;
 document.getElementById("launchBtn").addEventListener("click", function(){
-  function addScript(src){
-    let script = document.createElement("script");
-    script.setAttribute("src", src);
-    document.body.appendChild(script);
-  }
-
   sessionStorage.setItem("latCoord", chosenAirport.latitude);
   sessionStorage.setItem("lonCoord", chosenAirport.longitude);
   latCoord = chosenAirport.latitude;
