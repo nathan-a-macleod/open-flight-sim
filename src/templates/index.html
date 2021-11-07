@@ -22,11 +22,23 @@
             </form>
 
             <select name="resolutionElem" id="resolutionElem">
-                <option value="low">Low</option>
-                <option value="medium" selected="selected">Medium</option>
-                <option value="high">High</option>
-                <option value="ultra">Ultra</option>
-                <option value="insane">INSANE</option>
+                <optgroup label="resolution">
+                    <option value="low">Low</option>
+                    <option value="medium" selected="selected">Medium</option>
+                    <option value="high">High</option>
+                    <option value="ultra">Ultra</option>
+                    <option value="insane">INSANE</option>
+                </optgroup>
+            </select>
+
+            <select name="radiusElem" id="radiusElem">
+                <optgroup label="radius">
+                    <option value="microscopic">Microscopic</option>
+                    <option value="tiny">Tiny</option>
+                    <option value="normal" selected="selected">Normal</option>
+                    <option value="large">Large</option>
+                    <option value="massive">MASSIVE</option>
+                </optgroup>
             </select>
 
             <!--<form id="searchFieldForm">

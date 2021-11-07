@@ -100,6 +100,24 @@ button:hover{
     top: calc(32px + 36px + 32px);
 }
 
+#radiusElem{
+    position: absolute;
+
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    
+    -border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+
+    background-color: #ffffff;
+    border: none;
+    
+    left: calc(32px + 112px + 32px);
+    top: calc(32px + 36px + 32px);
+}
+
 #launchBtn{
     position: absolute;
     
