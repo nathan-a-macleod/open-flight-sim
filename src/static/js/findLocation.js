@@ -60,10 +60,12 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   latCoord = chosenAirport.latitude;
   lonCoord = chosenAirport.longitude;
 
+  if (resolutionElem.value == "pathetic") resolution = 11;
   if (resolutionElem.value == "low") resolution = 12;
-  if (resolutionElem.value == "medium") resolution = 14;
-  if (resolutionElem.value == "high") resolution = 15;
-  if (resolutionElem.value == "ultra") resolution = 17;
+  if (resolutionElem.value == "medium") resolution = 13;
+  if (resolutionElem.value == "high") resolution = 14;
+  if (resolutionElem.value == "ultra") resolution = 15;
+  if (resolutionElem.value == "max") resolution = 17;
   sessionStorage.setItem("resolution", resolution);
 
   if (radiusElem.value == "microscopic") radius = 5;

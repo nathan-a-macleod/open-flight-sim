@@ -34,9 +34,9 @@ function addTile(radius, resolution, lat, lon){
         [
           lat,
           lon
-        ],               // [lat, lng]
-        200,          // radius of bounding circle (km)
-        8       // zoom resolution
+        ],           // [lat, lng]
+        100,         // radius of bounding circle (km)
+        8            // zoom resolution
       );
       
       secondryTerrain.then(
@@ -45,8 +45,8 @@ function addTile(radius, resolution, lat, lon){
     
           value2.rotation.x = THREE.Math.degToRad(-90);
           value2.name = "secondryTile";
-          value2.scale.x = 10;
-          value2.scale.y = 10;
+          value2.scale.x = 20;
+          value2.scale.y = 20;
           value2.scale.z = 10;
           value2.position.y = -0.1;
           scene.add(value2);
