@@ -8,7 +8,7 @@ let paused = true;
 
 let scene = new THREE.Scene();
 scene.background = new THREE.Color(0x7FB7DB);
-scene.fog = new THREE.Fog(0x79B2D8, 0, 100);
+scene.fog = new THREE.Fog(0x79B2D8, 0, resolution * 0.07);
 
 let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.001, 100000);
 camera.position.y = 5;

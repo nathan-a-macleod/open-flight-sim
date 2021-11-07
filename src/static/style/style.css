@@ -118,6 +118,26 @@ button:hover{
     top: calc(32px + 36px + 32px);
 }
 
+#fog{
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #ffffff;
+    
+    right: 0px;
+    top: 0px;
+    width: 300px;
+
+    padding: 16px;
+    
+    -border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+
+    background-color: #aaaaaa30;
+    color: white !important;
+    backdrop-filter: blur(10px);
+}
+
 #launchBtn{
     position: absolute;
     

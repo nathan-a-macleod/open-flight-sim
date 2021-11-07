@@ -75,7 +75,7 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   sessionStorage.setItem("radius", radius);
 
   document.getElementById("findLocationDiv").style.display = "none";
-
+  
   addScript("/static/js/setup.js");
 
   setTimeout(function(){
@@ -84,5 +84,9 @@ document.getElementById("launchBtn").addEventListener("click", function(){
 
   setTimeout(function(){
     addScript("/static/js/renderLoop.js");
+  }, 1000);
+
+  setTimeout(function(){
+    addScript("/static/js/UI.js");
   }, 1000);
 });
