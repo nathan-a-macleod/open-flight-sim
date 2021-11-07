@@ -10,6 +10,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Allow the main page to download the terrain.
 - [x] Allow each tile of the terrain to have elevation data.
 - [x] Allow the user to choose the radius of the tile.
+- [ ] Add an option for the user to add & customise fog.
 - [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
 - [ ] Add physics.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
