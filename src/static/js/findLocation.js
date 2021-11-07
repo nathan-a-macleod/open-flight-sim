@@ -60,18 +60,17 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   latCoord = chosenAirport.latitude;
   lonCoord = chosenAirport.longitude;
 
-  if (resolutionElem.value == "low") resolution = 10;
-  if (resolutionElem.value == "medium") resolution = 12;
-  if (resolutionElem.value == "high") resolution = 13;
-  if (resolutionElem.value == "ultra") resolution = 15;
-  if (resolutionElem.value == "insane") resolution = 17;
+  if (resolutionElem.value == "low") resolution = 12;
+  if (resolutionElem.value == "medium") resolution = 14;
+  if (resolutionElem.value == "high") resolution = 15;
+  if (resolutionElem.value == "ultra") resolution = 17;
   sessionStorage.setItem("resolution", resolution);
 
-  if (radiusElem.value == "microscopic") radius = 1;
+  if (radiusElem.value == "microscopic") radius = 5;
   if (radiusElem.value == "tiny") radius = 10;
-  if (radiusElem.value == "normal") radius = 30;
+  if (radiusElem.value == "normal") radius = 20;
   if (radiusElem.value == "large") radius = 45;
-  if (radiusElem.value == "massive") radius = 65;
+  if (radiusElem.value == "massive") radius = 60;
   sessionStorage.setItem("radius", radius);
 
   document.getElementById("findLocationDiv").style.display = "none";
