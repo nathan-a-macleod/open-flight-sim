@@ -2,35 +2,70 @@ let tgeo = new ThreeGeo({
     tokenMapbox: userAPIToken, // <---- set your Mapbox API token here
 });
 
-let tile;
+let activeTile;
+let secondryTile;
 function addTile(radius, resolution, lat, lon){
-  let terrain = tgeo.getTerrainRgb(
-      [
-        lat,
-        lon
-      ], // [lat, lng]
-      radius,               // radius of bounding circle (km)
-      resolution            // zoom resolution
-    );
+  // ----------
+  // The active tile:
+  // ----------
+  let activeTerrain = tgeo.getTerrainRgb(
+    [
+      lat,
+      lon
+    ],               // [lat, lng]
+    radius,          // radius of bounding circle (km)
+    resolution       // zoom resolution
+  );
   
-  terrain.then(
-    function(value) { 
-      console.log(value);
-      value.rotation.x = THREE.Math.degToRad(-90);
-      //value.scale.x = 10;
-      //value.scale.y = 10;
-      //value.scale.z = 10;
-      //value.constUnitsSide = 10;
-      value.name = "tile";
-      scene.add(value);
+  activeTerrain.then(
+    function(value1) {
+      console.log("Active terrain: ", value1);
+
+      value1.rotation.x = THREE.Math.degToRad(-90);
+      value1.name = "activeTile";
+      scene.add(value1);
       
-      tile = value;
-      paused = false; // Ensure the game is paused after the first tile is loaded
+      activeTile = value1;
+
+      // ----------
+      // The secondry tile:
+      // ----------
+      let secondryTerrain = tgeo.getTerrainRgb(
+        [
+          lat,
+          lon
+        ],               // [lat, lng]
+        200,          // radius of bounding circle (km)
+        8       // zoom resolution
+      );
+      
+      secondryTerrain.then(
+        function(value2) { 
+          console.log("Secondry terrain: ", value2);
+    
+          value2.rotation.x = THREE.Math.degToRad(-90);
+          value2.name = "secondryTile";
+          value2.scale.x = 10;
+          value2.scale.y = 10;
+          value2.scale.z = 10;
+          value2.position.y = -0.1;
+          scene.add(value2);
+          
+          secondryTile = value2;
+    
+          paused = false; // Ensure the game is paused after the first tile is loaded
+        },
+        
+        function(error) { 
+          alert("A critical error occured. The page will now be refreshed."); 
+          location.reload(); 
+        }
+      );
     },
     
     function(error) { 
       alert("A critical error occured. The page will now be refreshed."); 
-      location.reload; 
+      location.reload(); 
     }
   );
 }
