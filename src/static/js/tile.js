@@ -24,6 +24,18 @@ function addTile(radius, resolution, lat, lon){
       value1.rotation.x = THREE.Math.degToRad(-90);
       value1.name = "activeTile";
       scene.add(value1);
+
+      // Add the water
+      /*
+      const geometry = new THREE.PlaneGeometry(1, 1);
+      const material = new THREE.MeshBasicMaterial({color: 0x57a3c6, side: THREE.DoubleSide});
+      const activeWater = new THREE.Mesh(geometry, material);
+
+      activeWater.rotation.x = THREE.Math.degToRad(90);
+      activeWater.position.y = 0.00001;
+      
+      scene.add(activeWater);
+      */
       
       activeTile = value1;
 
