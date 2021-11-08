@@ -11,8 +11,6 @@ function addCloud(param){
         const geometry = new THREE.BufferGeometry();
         const vertices = [];
 
-        const sprite = new THREE.TextureLoader().load("/static/assets/cloud1.png");
-
         for (let i = 0; i < param.pointsNum; i++) {
             const x = param.x + Math.random() + xOffset + (Math.random() * 1);
             const y = param.y + Math.random() + yOffset + (Math.random() * 1);
@@ -26,7 +24,7 @@ function addCloud(param){
         const material = new THREE.PointsMaterial({
             size: 0.004,
             sizeAttenuation: true,
-            map: sprite, 
+            color: 0xffffff, 
             alphaTest: 0.5, 
             transparent: true
         });
@@ -51,7 +49,7 @@ addCloud({
     x: 0,
     y: 0,
     z: 0,
-    pointsNum: 15000,
+    pointsNum: 10000,
     cloudsNum: 15,
     opacity: 0.5 + Math.random() / 4
 });
