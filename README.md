@@ -15,10 +15,10 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Allow the user to choose the radius of the tile.
 - [x] Add an option for the user to add & customise fog.
 - [x] Give the program an active tile - and a secondry tile to be in the background.
-- [x] Add more classes for the CSS.
+- [x] Add 3d particle clouds.
+- [ ] Add a full weather engine with settings.
 - [ ] Allow the user to adjust the height of the secondary tile.
 - [ ] Give the tiles building & tree data.
-- [ ] Add 3d volumetric clouds
 - [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
 - [ ] Add a plane 3d model.
 - [ ] Add physics.

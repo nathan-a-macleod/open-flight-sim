@@ -22,7 +22,7 @@ function addCloud(param){
         geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.004,
+            size: 0.006,
             sizeAttenuation: true,
             color: 0xffffff, 
             alphaTest: 0.5, 
@@ -49,7 +49,7 @@ addCloud({
     x: 0,
     y: 0,
     z: 0,
-    pointsNum: 10000,
+    pointsNum: 8000,
     cloudsNum: 15,
     opacity: 0.5 + Math.random() / 4
 });
