@@ -52,8 +52,18 @@ let latCoord;
 let lonCoord;
 let resolution;
 let resolutionInput = document.getElementById("resolutionInput");
+let resolutionText = document.getElementById("resolutionText");
+resolutionInput.addEventListener("change", function(){
+  resolutionText.innerHTML = "Resolution: " + resolutionInput.value;
+});
+
 let radius;
 let radiusInput = document.getElementById("radiusInput");
+let radiusText = document.getElementById("radiusText");
+radiusInput.addEventListener("change", function(){
+  radiusText.innerHTML = "Radius: " + radiusInput.value + " KM";
+});
+
 document.getElementById("launchBtn").addEventListener("click", function(){
   sessionStorage.setItem("latCoord", chosenAirport.latitude);
   sessionStorage.setItem("lonCoord", chosenAirport.longitude);
