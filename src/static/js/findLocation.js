@@ -85,10 +85,14 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   }, 1000);
 
   setTimeout(function(){
-    addScript("/static/js/renderLoop.js");
+    addScript("/static/js/clouds.js");
   }, 1000);
 
   setTimeout(function(){
     addScript("/static/js/UI.js");
+  }, 1000);
+
+  setTimeout(function(){
+    addScript("/static/js/renderLoop.js");
   }, 1000);
 });

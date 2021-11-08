@@ -11,7 +11,7 @@ function render() {
   setTimeout(function(){
     requestAnimationFrame(render);
   }, 1000 / framerate);
-    
+
   renderer.render(scene, camera);
  }
 
