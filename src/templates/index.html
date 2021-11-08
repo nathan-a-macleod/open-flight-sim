@@ -18,6 +18,17 @@
             <button id="turnFogOffBtn" onclick="scene.fog = null;">Turn off</button>
         </div>
 
+        <div id="fps">
+            <input type="radio" id="fps60" name="fpsRadio" checked="checked">
+            <label>60 FPS</label>
+            <input type="radio" id="fps48" name="fpsRadio">
+            <label>48 FPS</label>
+            <input type="radio" id="fps30" name="fpsRadio">
+            <label>30 FPS</label>
+            <input type="radio" id="fps24" name="fpsRadio">
+            <label>24 FPS</label>
+        </div>
+
         <div id="findLocationDiv" style="display: none;">
             <div id="map"></div>
             <form id="menu" autocomplete="off">

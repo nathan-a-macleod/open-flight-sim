@@ -1,4 +1,5 @@
 document.getElementById("fog").style.display = "block";
+document.getElementById("fps").style.display = "block";
 
 function updateFog(){
     scene.fog = new THREE.Fog(
