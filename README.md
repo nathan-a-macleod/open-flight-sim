@@ -18,6 +18,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Add more classes for the CSS.
 - [ ] Allow the user to adjust the height of the secondary tile.
 - [ ] Give the tiles building & tree data.
+- [ ] Add 3d volumetric clouds
 - [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
 - [ ] Add a plane 3d model.
 - [ ] Add physics.
@@ -26,6 +27,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [ ] Add weather & realistic lighting.
 - [ ] Add emergency capabilities to aircraft.
 - [ ] Add a settings to edit everything.
+- [ ] Add realistic volumetric lighting.
 
 # How to use
 * `pip3 install flask`
