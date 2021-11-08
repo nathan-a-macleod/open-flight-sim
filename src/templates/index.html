@@ -10,7 +10,7 @@
     <body>
         <canvas id="mainCanvas"></canvas>
 
-        <div id="fog">
+        <div id="fog" class="UI">
             <label>Fog Start: </label>
             <input type="number" step=0.05 id="fogStart" value=0 style="width: 100%;">
             <label>Fog End: </label>
@@ -20,7 +20,7 @@
 
         <div id="findLocationDiv" style="display: none;">
             <div id="map"></div>
-            <form id="menu" autocomplete="off">
+            <form id="menu" class="UI" autocomplete="off">
               <!-- See a list of Mapbox-hosted public styles at -->
               <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
               <input id="satellite-v9" type="radio" name="rtoggle" value="satellite">
@@ -29,7 +29,7 @@
               <label for="streets-v11">streets</label>
             </form>
 
-            <select name="resolutionElem" id="resolutionElem">
+            <select name="resolutionElem" class="UI" id="resolutionElem">
                 <optgroup label="resolution">
                     <option value="pathetic">Pathetic</option>
                     <option value="low">Low</option>
@@ -40,7 +40,7 @@
                 </optgroup>
             </select>
 
-            <select name="radiusElem" id="radiusElem">
+            <select name="radiusElem" class="UI" id="radiusElem">
                 <optgroup label="radius">
                     <option value="microscopic">Microscopic</option>
                     <option value="tiny">Tiny</option>
