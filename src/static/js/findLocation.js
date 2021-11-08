@@ -80,7 +80,8 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   
   addScript("/static/js/setup.js");
 
-  /*setTimeout(function(){
+  ///*
+  setTimeout(function(){
     addScript("/static/js/tile.js");
   }, 1000);
 
@@ -94,10 +95,13 @@ document.getElementById("launchBtn").addEventListener("click", function(){
 
   setTimeout(function(){
     addScript("/static/js/renderLoop.js");
-  }, 1000);*/
+  }, 1000);
+  //*/
 
+  /*
   addScript("/static/js/tile.js");
   addScript("/static/js/UI.js");
   addScript("/static/js/clouds.js");
   addScript("/static/js/renderLoop.js");
+  */
 });

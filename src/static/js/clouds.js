@@ -4,17 +4,17 @@ function addCloud(param){
     cloudNum++;
 
     function addCloudPoint(){
-        let xOffset = Math.random() * 2;
-        let yOffset = Math.random() * 2;
-        let zOffset = Math.random() * 2;
+        let xOffset = Math.random() * param.cloudPointDistance;
+        let yOffset = Math.random() * param.cloudPointDistance;
+        let zOffset = Math.random() * param.cloudPointDistance;
 
         const geometry = new THREE.BufferGeometry();
         const vertices = [];
 
         for (let i = 0; i < param.pointsNum; i++) {
-            const x = param.x + Math.random() + xOffset + (Math.random() * 1);
-            const y = param.y + Math.random() + yOffset + (Math.random() * 1);
-            const z = param.z + Math.random() + zOffset + (Math.random() * 1);
+            const x = param.x + Math.random() + Math.random() + xOffset;
+            const y = param.y + Math.random() + Math.random() + yOffset;
+            const z = param.z + Math.random() + Math.random() + zOffset;
 
             vertices.push(x, y, z);
         }
@@ -22,7 +22,7 @@ function addCloud(param){
         geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.006,
+            size: param.particleSize,
             sizeAttenuation: true,
             color: 0xffffff, 
             alphaTest: 0.5, 
@@ -32,24 +32,37 @@ function addCloud(param){
         material.color.setHSL( 1.0, 0.3, 0.7 );
 
         const particles = new THREE.Points( geometry, material );
-        particles.name = "cloud" + cloudNum;
         particles.scale.x = 0.2;
         particles.scale.y = 0.2;
         particles.scale.z = 0.2;
 
-        scene.add(particles);   
+        scene.add(particles);  
+        
+        return particles;
     }
 
+    let cloudGroup = new THREE.Group();
+    cloudGroup.name = "cloud" + cloudNum;
     for(i=0; i<param.cloudsNum; i++){
-        addCloudPoint();
+        cloudGroup.add(addCloudPoint());
     }
+
+    scene.add(cloudGroup);
+
+    return cloudGroup;
 }
 
-addCloud({
+let cloudLayer1 = addCloud({
     x: 0,
     y: 0,
     z: 0,
     pointsNum: 8000,
     cloudsNum: 15,
+    cloudPointDistance: 4,
+    particleSize: 0.008,
     opacity: 0.5 + Math.random() / 4
 });
+
+cloudLayer1.scale.x = 2;
+cloudLayer1.scale.y = 0.1;
+cloudLayer1.scale.z = 2;

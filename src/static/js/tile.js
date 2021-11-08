@@ -82,4 +82,4 @@ function addTile(radius, resolution, lat, lon){
   );
 }
 
-addTile(parseFloat(radius), parseInt(resolution), latCoord, lonCoord);
+//addTile(parseFloat(radius), parseInt(resolution), latCoord, lonCoord);
