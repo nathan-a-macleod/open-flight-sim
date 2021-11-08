@@ -51,28 +51,19 @@ document.getElementById(chosenAirport.name).children[0].children[0].children[1].
 let latCoord;
 let lonCoord;
 let resolution;
-let resolutionElem = document.getElementById("resolutionElem");
+let resolutionInput = document.getElementById("resolutionInput");
 let radius;
-let radiusElem = document.getElementById("radiusElem");
+let radiusInput = document.getElementById("radiusInput");
 document.getElementById("launchBtn").addEventListener("click", function(){
   sessionStorage.setItem("latCoord", chosenAirport.latitude);
   sessionStorage.setItem("lonCoord", chosenAirport.longitude);
   latCoord = chosenAirport.latitude;
   lonCoord = chosenAirport.longitude;
 
-  if (resolutionElem.value == "pathetic") resolution = 10;
-  if (resolutionElem.value == "low") resolution = 12;
-  if (resolutionElem.value == "medium") resolution = 13;
-  if (resolutionElem.value == "high") resolution = 14;
-  if (resolutionElem.value == "ultra") resolution = 15;
-  if (resolutionElem.value == "max") resolution = 17;
+  resolution = resolutionInput.value;
   sessionStorage.setItem("resolution", resolution);
 
-  if (radiusElem.value == "microscopic") radius = 5;
-  if (radiusElem.value == "tiny") radius = 10;
-  if (radiusElem.value == "normal") radius = 20;
-  if (radiusElem.value == "large") radius = 45;
-  if (radiusElem.value == "massive") radius = 60;
+  radius = radiusInput.value;
   sessionStorage.setItem("radius", radius);
 
   document.getElementById("findLocationDiv").style.display = "none";

@@ -29,26 +29,15 @@
               <label for="streets-v11">streets</label>
             </form>
 
-            <select name="resolutionElem" class="UI" id="resolutionElem">
-                <optgroup label="resolution">
-                    <option value="pathetic">Pathetic</option>
-                    <option value="low">Low</option>
-                    <option value="medium" selected="selected">Medium</option>
-                    <option value="high">High</option>
-                    <option value="ultra">Ultra</option>
-                    <option value="max">Max</option>
-                </optgroup>
-            </select>
+            <div id="resolutionElem" class="UI">
+                <label>Resolution</label>
+                <input id="resolutionInput" type="range" min=12 max=17 value=13 step=1>
+            </div>
 
-            <select name="radiusElem" class="UI" id="radiusElem">
-                <optgroup label="radius">
-                    <option value="microscopic">Microscopic</option>
-                    <option value="tiny">Tiny</option>
-                    <option value="normal" selected="selected">Normal</option>
-                    <option value="large">Large</option>
-                    <option value="massive">MASSIVE</option>
-                </optgroup>
-            </select>
+            <div id="radiusElem" class="UI">
+                <label>Radius</label>
+                <input id="radiusInput" type="range" min=0.5 max=60 value=20 step=0.5>
+            </div>
 
             <!--<form id="searchFieldForm">
               <input id="searchField" placeholder="Search for somewhere..."></input>

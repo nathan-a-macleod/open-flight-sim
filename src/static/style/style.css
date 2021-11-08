@@ -103,8 +103,8 @@ button:hover{
     background-color: #ffffff;
     border: none;
     
-    left: calc(32px + 112px + 32px);
-    top: calc(32px + 36px + 32px);
+    left: 32px;
+    top: calc(32px + 36px + 32px + 56px + 32px);
 }
 
 #fog{
