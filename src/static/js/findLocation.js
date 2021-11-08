@@ -80,13 +80,9 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   
   addScript("/static/js/setup.js");
 
-  ///*
+  /*
   setTimeout(function(){
     addScript("/static/js/tile.js");
-  }, 1000);
-
-  setTimeout(function(){
-    addScript("/static/js/UI.js");
   }, 1000);
 
   setTimeout(function(){
@@ -94,14 +90,18 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   }, 1000);
 
   setTimeout(function(){
+    addScript("/static/js/UI.js");
+  }, 1000);
+
+  setTimeout(function(){
     addScript("/static/js/renderLoop.js");
   }, 1000);
-  //*/
+  */
 
-  /*
+  ///*
   addScript("/static/js/tile.js");
   addScript("/static/js/UI.js");
   addScript("/static/js/clouds.js");
   addScript("/static/js/renderLoop.js");
-  */
+  //*/
 });

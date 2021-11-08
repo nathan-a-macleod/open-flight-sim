@@ -15,7 +15,8 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Add an option for the user to add & customise fog.
 - [x] Give the program an active tile - and a secondry tile to be in the background.
 - [x] Add 3d particle clouds.
-- [ ] Add a full weather engine with settings.
+- [ ] Rename "findLocation" to setup.
+- [ ] Allow the clouds to be adjusted in the setup page.
 - [ ] Allow the user to adjust the height of the secondary tile.
 - [ ] Give the tiles building & tree data.
 - [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
