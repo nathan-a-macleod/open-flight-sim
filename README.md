@@ -15,11 +15,13 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Allow the user to choose the radius of the tile.
 - [x] Add an option for the user to add & customise fog.
 - [x] Give the program an active tile - and a secondry tile to be in the background.
-- [ ] Add more classes for the CSS.
+- [x] Add more classes for the CSS.
 - [ ] Allow the user to adjust the height of the secondary tile.
 - [ ] Give the tiles building & tree data.
 - [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
+- [ ] Add a plane 3d model.
 - [ ] Add physics.
+- [ ] Allow the plane to collide with the terrain.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
 - [ ] Add weather & realistic lighting.
 - [ ] Add emergency capabilities to aircraft.
