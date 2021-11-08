@@ -60,7 +60,7 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   latCoord = chosenAirport.latitude;
   lonCoord = chosenAirport.longitude;
 
-  if (resolutionElem.value == "pathetic") resolution = 11;
+  if (resolutionElem.value == "pathetic") resolution = 10;
   if (resolutionElem.value == "low") resolution = 12;
   if (resolutionElem.value == "medium") resolution = 13;
   if (resolutionElem.value == "high") resolution = 14;
