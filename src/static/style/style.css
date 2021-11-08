@@ -138,7 +138,7 @@ button:hover{
     backdrop-filter: blur(10px);
 }
 
-#fps{
+#fpsElem{
     display: none; /* Hidden by default */
     position: absolute;
     background-color: #ffffff;

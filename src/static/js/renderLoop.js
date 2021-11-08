@@ -6,11 +6,10 @@ window.addEventListener('resize', () => {
 });
 
 let framerate = 60;
-document.getElementById("fps60").addEventListener("click", function(){ framerate = 60 });
-document.getElementById("fps48").addEventListener("click", function(){ framerate = 48 });
-document.getElementById("fps30").addEventListener("click", function(){ framerate = 30 });
-document.getElementById("fps24").addEventListener("click", function(){ framerate = 24 });
-  
+document.getElementById("fpsElem").addEventListener("change", function(){
+  framerate = parseInt(document.getElementById("fpsElem").value);
+});
+
 function render() {
   setTimeout(function(){
     requestAnimationFrame(render);
