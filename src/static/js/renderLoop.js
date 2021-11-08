@@ -6,9 +6,6 @@ window.addEventListener('resize', () => {
 });
 
 let framerate = 60;
-document.getElementById("fpsElem").addEventListener("change", function(){
-  framerate = parseInt(document.getElementById("fpsElem").value);
-});
 
 function render() {
   setTimeout(function(){

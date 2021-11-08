@@ -138,26 +138,6 @@ button:hover{
     backdrop-filter: blur(10px);
 }
 
-#fpsElem{
-    display: none; /* Hidden by default */
-    position: absolute;
-    background-color: #ffffff;
-    
-    right: 32px;
-    top: calc(32px + 182px + 32px);
-    width: 300px;
-
-    padding: 16px;
-    
-    -border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-
-    background-color: #aaaaaa30;
-    color: white !important;
-    backdrop-filter: blur(10px);
-}
-
 #launchBtn{
     position: absolute;
     
