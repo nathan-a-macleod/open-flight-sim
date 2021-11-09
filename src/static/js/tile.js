@@ -59,8 +59,8 @@ function addTile(radius, resolution, lat, lon){
           value2.name = "secondryTile";
           value2.scale.x = 20;
           value2.scale.y = 20;
-          value2.scale.z = 10;
-          value2.position.y = -0.1;
+          value2.scale.z = 1;
+          value2.position.y = -0.05;
           scene.add(value2);
           
           secondryTile = value2;
