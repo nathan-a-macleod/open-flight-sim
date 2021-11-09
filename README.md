@@ -18,12 +18,12 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Add 3d particle clouds.
 - [x] Rename "findLocation" to setupPage.
 - [x] Allow the clouds to be adjusted in the setup page.
-- [ ] Add more settings to the clouds in the setup page.
 - [ ] Allow the user to adjust the height of the secondary tile.
 - [ ] Give the tiles building & tree data.
-- [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
 - [ ] Add a plane 3d model.
 - [ ] Add physics.
+- [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
+- [ ] Add more settings to the clouds in the setup page.
 - [ ] Allow the plane to collide with the terrain.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
 - [ ] Add weather & realistic lighting.
