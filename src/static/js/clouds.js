@@ -47,6 +47,13 @@ function addCloud(params){
     return cloudGroup;
 }
 
+let colorsArr = [0xdddddd, 0xffffff];
+if (parseInt(weather) > 50 ){
+    colorsArr.push(0xaaaaaa);
+    colorsArr.push(0x999999);
+    colorsArr.push(0x777777);
+}
+
 let cloudLayer1 = addCloud({
     x: -2,
     y: 2,
@@ -54,7 +61,7 @@ let cloudLayer1 = addCloud({
     pointsNum: parseInt(weather) * 400,
     cloudsNum: parseInt(weather) / 1.2,
     cloudPointDistance: 3,
-    particleSize: 0.07,
+    particleSize: 0.06,
     name: "cloudLayer1",
     colors: [0xffffff, 0xdddddd, 0xaaaaaa],
     opacity: 0.5 + Math.random() / 4
