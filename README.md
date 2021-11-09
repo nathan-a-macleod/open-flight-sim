@@ -22,7 +22,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [ ] Add a plane 3d model.
 - [ ] Add physics.
 - [ ] Allow the user to refresh the tile from a minimap - which automatically updates.
-- [ ] Add more settings to the clouds in the setup page.
+- [ ] Add more settings to the clouds in the setup page - a proper weather engine.
 - [ ] Allow the plane to collide with the terrain.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
 - [ ] Add weather & realistic lighting.
