@@ -1,8 +1,8 @@
 # open-flight-sim
 A project to create a fully functioning, open source flight simulator with good performance.
 
-![screenshot1](screenshot1.png)
 ![screenshot2](screenshot2.png)
+![screenshot1](screenshot1.png)
 
 # TODO:
 - [x] Create a page for the user to create and input a mapbox API key. This will be used for the terrain data.
