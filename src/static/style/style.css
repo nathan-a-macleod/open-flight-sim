@@ -87,6 +87,13 @@ button:hover{
     top: calc(32px + 36px + 32px + 56px + 32px);
 }
 
+#weatherElem{
+    position: absolute;
+    
+    left: 32px;
+    top: calc(32px + 36px + 32px + 56px + 32px + 56px + 32px);
+}
+
 #fog{
     display: none; /* Hidden by default */
     position: absolute;

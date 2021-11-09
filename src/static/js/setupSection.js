@@ -64,6 +64,13 @@ radiusInput.addEventListener("change", function(){
   radiusText.innerHTML = "Radius: " + radiusInput.value + " KM";
 });
 
+let weather;
+let weatherInput = document.getElementById("weatherInput");
+let weatherText = document.getElementById("weatherText");
+weatherInput.addEventListener("change", function(){
+  weatherText.innerHTML = "Weather Quality: " + weatherInput.value + " %";
+});
+
 document.getElementById("launchBtn").addEventListener("click", function(){
   sessionStorage.setItem("latCoord", chosenAirport.latitude);
   sessionStorage.setItem("lonCoord", chosenAirport.longitude);
