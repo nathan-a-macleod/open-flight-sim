@@ -76,7 +76,7 @@ document.getElementById("launchBtn").addEventListener("click", function(){
   radius = radiusInput.value;
   sessionStorage.setItem("radius", radius);
 
-  document.getElementById("findLocationDiv").style.display = "none";
+  document.getElementById("setupDiv").style.display = "none";
   
   addScript("/static/js/setup.js");
 

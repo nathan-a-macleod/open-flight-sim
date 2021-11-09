@@ -27,13 +27,13 @@ if (sessionStorage.getItem("userAPIToken") == null){
                 userAPIToken = APIToken;
                 sessionStorage.setItem("userAPIToken", APIToken);
                 document.getElementById("APITokenDiv").style.display = "none";
-                document.getElementById("findLocationDiv").style.display = "block";
-                addScript("/static/js/findLocation.js");
+                document.getElementById("setupDiv").style.display = "block";
+                addScript("/static/js/setupSection.js");
             }
         }
     });
 } else {
     userAPIToken = sessionStorage.getItem("userAPIToken");
-    document.getElementById("findLocationDiv").style.display = "block";
-    addScript("/static/js/findLocation.js");
+    document.getElementById("setupDiv").style.display = "block";
+    addScript("/static/js/setupSection.js");
 }
