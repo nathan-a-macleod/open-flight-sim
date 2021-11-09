@@ -67,14 +67,14 @@ let cloudLayer1 = addCloud({
     y: 2,
     z: -3,
     pointsNum: parseInt(weather) * 400,
-    cloudsNum: parseInt(weather) / 1.2,
+    cloudsNum: parseInt(weather) / 1.4,
     cloudPointDistance: 3,
-    particleSize: 0.06,
+    particleSize: 0.04,
     name: "cloudLayer1",
     colors: colorsArr,
     opacity: 0.5 + Math.random() / 4
 });
 
 cloudLayer1.scale.x = 60;
-cloudLayer1.scale.y = 5;
+cloudLayer1.scale.y = 1.5;
 cloudLayer1.scale.z = 60;
