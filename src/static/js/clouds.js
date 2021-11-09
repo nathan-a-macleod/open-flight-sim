@@ -20,12 +20,11 @@ function addCloud(params){
         const material = new THREE.PointsMaterial({
             size: params.particleSize,
             sizeAttenuation: true,
-            color: 0xffffff, 
+            color: params.colors[Math.floor(Math.random() * params.colors.length)], 
             alphaTest: 0.5, 
             transparent: true
         });
         material.opacity = params.opacity;
-        material.color.setHSL( 1.0, 0.3, 0.7 );
 
         const particles = new THREE.Points(geometry, material);
         particles.scale.x = 0.2;
@@ -50,16 +49,17 @@ function addCloud(params){
 
 let cloudLayer1 = addCloud({
     x: -2,
-    y: 20,
+    y: 2,
     z: -3,
     pointsNum: parseInt(weather) * 400,
-    cloudsNum: parseInt(weather) / 2,
+    cloudsNum: parseInt(weather) / 1.2,
     cloudPointDistance: 3,
-    particleSize: 0.05,
+    particleSize: 0.07,
     name: "cloudLayer1",
+    colors: [0xffffff, 0xdddddd, 0xaaaaaa],
     opacity: 0.5 + Math.random() / 4
 });
 
-cloudLayer1.scale.x = 30;
-cloudLayer1.scale.y = 2;
-cloudLayer1.scale.z = 30;
+cloudLayer1.scale.x = 60;
+cloudLayer1.scale.y = 2.5;
+cloudLayer1.scale.z = 60;
