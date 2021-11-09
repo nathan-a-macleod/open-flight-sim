@@ -26,7 +26,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
 - [ ] Add weather & realistic lighting.
 - [ ] Add emergency capabilities to aircraft.
-- [ ] Add a settings to edit everything.
+- [ ] Add a settings panel to edit everything.
 - [ ] Add realistic volumetric lighting.
 
 # How to use
