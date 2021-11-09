@@ -47,11 +47,15 @@ function addCloud(params){
     return cloudGroup;
 }
 
-let colorsArr = [0xdddddd, 0xffffff];
+let colorsArr = [];
 if (parseInt(weather) > 50 ){
-    colorsArr.push(0xaaaaaa);
     colorsArr.push(0x999999);
     colorsArr.push(0x777777);
+    colorsArr.push(0x555555);
+} else {
+    colorsArr.push(0xaaaaaa);
+    colorsArr.push(0xdddddd);
+    colorsArr.push(0xffffff);
 }
 
 let cloudLayer1 = addCloud({
