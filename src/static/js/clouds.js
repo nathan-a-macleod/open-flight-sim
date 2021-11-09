@@ -76,5 +76,5 @@ let cloudLayer1 = addCloud({
 });
 
 cloudLayer1.scale.x = 60;
-cloudLayer1.scale.y = 2.5;
+cloudLayer1.scale.y = 5;
 cloudLayer1.scale.z = 60;

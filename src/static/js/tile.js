@@ -46,9 +46,9 @@ function addTile(radius, resolution, lat, lon){
         [
           lat,
           lon
-        ],           // [lat, lng]
-        100,         // radius of bounding circle (km)
-        9            // zoom resolution
+        ],                            // [lat, lng]
+        100,                          // radius of bounding circle (km)
+        parseInt(resolution / 1.5)    // zoom resolution
       );
       
       secondryTerrain.then(
