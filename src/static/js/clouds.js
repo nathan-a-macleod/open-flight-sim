@@ -49,17 +49,17 @@ function addCloud(params){
 }
 
 let cloudLayer1 = addCloud({
-    x: 0,
+    x: -2,
     y: 20,
-    z: 0,
-    pointsNum: 15000,
-    cloudsNum: 15,
+    z: -3,
+    pointsNum: parseInt(weather) * 400,
+    cloudsNum: parseInt(weather) / 2,
     cloudPointDistance: 3,
-    particleSize: 0.01,
+    particleSize: 0.05,
     name: "cloudLayer1",
     opacity: 0.5 + Math.random() / 4
 });
 
-cloudLayer1.scale.x = 6;
-cloudLayer1.scale.y = 0.1;
-cloudLayer1.scale.z = 6;
+cloudLayer1.scale.x = 30;
+cloudLayer1.scale.y = 2;
+cloudLayer1.scale.z = 30;
