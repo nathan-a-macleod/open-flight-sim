@@ -61,12 +61,12 @@ addTile(
 );
 
 addTile(
-  100, 
-  10, 
+  150, 
+  9, 
   parseFloat(latCoord), 
   parseFloat(lonCoord), 
-  10, 
+  15, 
   0, 
-  10, 
-  -0.05
+  15, 
+  -0.01
 );
