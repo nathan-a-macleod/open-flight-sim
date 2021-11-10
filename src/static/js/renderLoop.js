@@ -12,7 +12,7 @@ function render() {
   setTimeout(function(){
     requestAnimationFrame(render);
   }, 1000 / framerate);
-  console.log(option)
+  
   if (option >= 100) option = -1;
   if (option <= -100) option = 1;
 
