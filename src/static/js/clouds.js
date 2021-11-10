@@ -67,10 +67,10 @@ let cloudLayer1 = addCloud({
     x: -2,
     y: 2,
     z: -3,
-    pointsNum: parseInt(weather) * 400,
+    pointsNum: parseInt(weather) * 2000,
     cloudsNum: parseInt(weather) / 1.4,
     cloudPointDistance: 3,
-    particleSize: 0.04,
+    particleSize: 0.02,
     name: "cloudLayer1",
     colors: colorsArr,
     opacity: 0.5 + Math.random() / 4
