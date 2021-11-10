@@ -27,6 +27,7 @@ function addCloud(params){
         material.opacity = params.opacity;
 
         const particles = new THREE.Points(geometry, material);
+
         particles.scale.x = 0.2;
         particles.scale.y = 0.2;
         particles.scale.z = 0.2;
