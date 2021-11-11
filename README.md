@@ -20,6 +20,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Rename "findLocation" to setupPage.
 - [x] Allow the clouds to be adjusted in the setup page.
 - [x] Add movement to the clouds.
+- [ ] MIGRATE TO CESIUM.js
 - [ ] Give the tiles building & tree data.
 - [ ] Add a plane 3d model.
 - [ ] Add physics.
