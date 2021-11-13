@@ -43,7 +43,7 @@ function resetView(){
         destination : Cesium.Cartesian3.fromDegrees(
             lonCoord, 
             latCoord, 
-            400
+            2000
         ),
         orientation : {
             heading : Cesium.Math.toRadians(heading),
