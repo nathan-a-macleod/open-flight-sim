@@ -1,0 +1,1 @@
+document.getElementById("resetViewBtn").style.display = "block";

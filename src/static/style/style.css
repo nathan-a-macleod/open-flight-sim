@@ -88,6 +88,13 @@ button:hover{
     top: 32px;
 }
 
+#resetViewBtn{
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0px
+    top: 0px;
+}
+
 .UI{
     -border-radius: 8px;
     -webkit-border-radius: 8px;
