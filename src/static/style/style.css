@@ -30,12 +30,8 @@ button:hover{
     cursor: pointer
 }
 
-.mapboxgl-ctrl-top-right{
-    top: 22px !important;
-    right: 22px !important;
-}
 
-#APITokenDiv, #setupDiv, #map{
+#APITokenDiv, #setupDiv{
     position: absolute;
     background-color: #ffffff;
 
@@ -57,41 +53,11 @@ button:hover{
     height: 80vh;
 }
 
-#map{
-    left: 0px;
-    top: 0px;
-
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-}
-
-#menu{
-    position: absolute;
-    
-    left: 32px;
-    top: 32px;
-}
-
-#resolutionElem{
-    position: absolute;
-    
-    left: 32px;
-    top: calc(32px + 36px + 32px);
-}
-
-#radiusElem{
-    position: absolute;
-    
-    left: 32px;
-    top: calc(32px + 36px + 32px + 56px + 32px);
-}
-
 #weatherElem{
     position: absolute;
     
     left: 32px;
-    top: calc(32px + 36px + 32px + 56px + 32px + 56px + 32px);
+    top: 32px;
 }
 
 #fog{
@@ -114,7 +80,7 @@ button:hover{
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     
-    right: calc(32px + 29px + 32px);
+    right: 32px;
     top: 32px;
 }
 

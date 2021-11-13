@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Flight Simulator</title>
 
+        <meta charset="utf-8">
+
         <link rel="stylesheet" href='/static/style/style.css' />
-        <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+        <script src="https://cesium.com/downloads/cesiumjs/releases/1.87.1/Build/Cesium/Cesium.js"></script>
+        <link href="https://cesium.com/downloads/cesiumjs/releases/1.87.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     </head>
     <body>
-        <canvas id="mainCanvas"></canvas>
+        <script>
+            function addScript(src){
+                let script = document.createElement("script");
+                script.setAttribute("src", src);
+                script.setAttribute("type", "text/javascript");
+                document.body.appendChild(script);
+            }
+        </script>
+
+        <div id="cesiumContainer"></div>
 
         <div id="fog" class="UI">
             <label>Fog Start: </label>
@@ -19,51 +30,31 @@
         </div>
 
         <div id="setupDiv" style="display: none;">
-            <div id="map"></div>
-            <form id="menu" class="UI" autocomplete="off">
-              <!-- See a list of Mapbox-hosted public styles at -->
-              <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
-              <input id="satellite-v9" type="radio" name="rtoggle" value="satellite">
-              <label for="satellite-v9">satellite</label>
-              <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked">
-              <label for="streets-v11">streets</label>
-            </form>
-
-            <div id="resolutionElem" class="UI">
-                <label id="resolutionText">Resolution: 12</label>
-                <input id="resolutionInput" type="range" min=12 max=17 value=12 step=1>
-            </div>
-
-            <div id="radiusElem" class="UI">
-                <label id="radiusText">Radius: 40 KM</label>
-                <input id="radiusInput" type="range" min=0.5 max=60 value=40 step=0.5>
-            </div>
-
             <div id="weatherElem" class="UI">
                 <label id="weatherText">Weather Quality: 50%</label>
                 <input id="weatherInput" type="range" min=1 max=100 value=50 step=1>
             </div>
 
-            <!--<form id="searchFieldForm">
-              <input id="searchField" placeholder="Search for somewhere..."></input>
-              <button id="searchFieldBtn">Search</button>
-            </form>-->
+            <select id="selectAirport">
+
+            </select>
             
             <button id="launchBtn">Launch!</button>
         </div>
 
         <div id="APITokenDiv" style="display: none;">
-            <h1>Connect to your Mapbox account</h1>
-            <p>In order to download satellite information, you must use a valid API access token using Mapbox. Here is how to get one:</p>
+            <h1>Connect to your Cesium account</h1>
+            <p>To access the map information, you must use a valid API access token with Cesium. Here is how to get one:</p>
             <ul>
-                <li>Go to: <a href="https://mapbox.com" target="_blank" rel="noopener noreferrer">https://mapbox.com</a>, and sign in (or create an account if you don't have one).</li>
-                <li>Once you are signed in, go to the Mapbox account page: <a href="https://account.mapbox.com" target="_blank" rel="noopener noreferrer">https://account.mapbox.com</a></li>
-                <li>Copy the API access token, under the "Access tokens" section, and enter it below:</li>
+                <li>Go to: <a href="https://cesium.com" target="_blank" rel="noopener noreferrer">https://cesium.com</a>, and sign in (or create an account if you don't have one).</li>
+                <li>Once you are signed in, go to the Cesium access tokens page: <a href="https://cesium.com/ion/tokens/" target="_blank" rel="noopener noreferrer">https://cesium.com/ion/tokens/</a></li>
+                <li>Copy the API access token under the "Access Tokens" section, and enter it below:</li>
             </ul>
             
-            <p>Once you have entered an API key, the flight simulator will use it to download satellite imagery.</p>
+            <p>Once you have entered an API key, the flight simulator will use it to create a map.</p>
+            <p>If any part of the website doesn't work, try opening it again in a new tab and entering your API access token again.</p>
             
-            <label>Mapbox API access token:</label>
+            <label>Cesium API access token:</label>
             <input id="APIToken">
             <button id="CheckAPIToken">Check</button>
             <p id="APITokenResult"></p>
@@ -71,7 +62,6 @@
         
         <script type="text/javascript" src="/static/lib/three.min.js"></script>
         <script type="text/javascript" src="/static/lib/three-geo.min.js"></script>
-        <script type="text/javascript" src="/static/lib/OrbitControls.js"></script>
         <script type="text/javascript" src="/static/js/APITokenSection.js"></script>
         <script type="text/javascript" src="/static/js/airports.js"></script>
     </body>

@@ -1,50 +1,39 @@
-// ONLY FOR DEBBUGGING!
-// https://mrdoob.github.io/stats.js/build/stats.min.js
-(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='https://mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})();
+let latCoord = parseFloat(sessionStorage.getItem("latCoord"));
+let lonCoord = parseFloat(sessionStorage.getItem("lonCoord"));
+let weather = parseInt(sessionStorage.getItem("weather"));
+let heading = parseInt(sessionStorage.getItem("heading"));
 
-let canvas = document.getElementById("mainCanvas");
+setTimeout(function(){
+    addScript("/static/js/UI.js");
+}, 1000);
 
-let paused = true;
+Cesium.Ion.defaultAccessToken = userAPIToken;
 
-let scene = new THREE.Scene();
-scene.background = new THREE.Color(0x7FB7DB);
-scene.fog = null;
-
-let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.001, 100000);
-camera.position.y = 5;
-camera.position.z = 5;
-
-let renderer = new THREE.WebGLRenderer({
-//    alpha: true, 
-//    preserveDrawingBuffer: true, 
-    antialias: true, 
-    canvas: canvas
+const viewer = new Cesium.Viewer('cesiumContainer', {
+    terrainProvider : Cesium.createWorldTerrain({
+        requestWaterMask : true
+    })
 });
 
-renderer.setClearColor(0x7FB7DB);
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.gammaFactor = 1;
-renderer.outputEncoding = THREE.GammaEncoding;
-renderer.physicallyCorrectLights;
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
 
-let controls = new THREE.OrbitControls(camera, renderer.domElement);
+buildingTileset.style = new Cesium.Cesium3DTileStyle({
+    color: {
+        conditions: [
+            ["true", "color('#7f7b79')"]
+        ],
+    },
+});
 
-let sun = new THREE.DirectionalLight(0xcccccc);
-sun.intensity = 1;
-sun.position.set(1.5, 2, 6);
-scene.add(sun);
-
-function lon2tile(lon,zoom) { return (Math.floor((lon+180)/360*Math.pow(2,zoom))); }
-function lat2tile(lat,zoom)  { return (Math.floor((1-Math.log(Math.tan(lat*Math.PI/180) + 1/Math.cos(lat*Math.PI/180))/Math.PI)/2 *Math.pow(2,zoom))); }
-function tile2lon(x,z) {
-  return (x/Math.pow(2,z)*360-180);
-}
-function tile2lat(y,z) {
-  var n=Math.PI-2*Math.PI*y/Math.pow(2,z);
-  return (180/Math.PI*Math.atan(0.5*(Math.exp(n)-Math.exp(-n))));
-}
-function widthCoord(zoomLevel){
-  return 360 / Math.pow(2, zoomLevel);
-}
+viewer.camera.flyTo({
+    destination : Cesium.Cartesian3.fromDegrees(
+        lonCoord, 
+        latCoord, 
+        400
+    ),
+    orientation : {
+        heading : Cesium.Math.toRadians(heading),
+        pitch : Cesium.Math.toRadians(0.0),
+        roll : 0.0
+    }
+});

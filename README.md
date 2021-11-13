@@ -6,9 +6,8 @@ A project to create a fully functioning, open source flight simulator with good 
 ![screenshot3](screenshot3.png)
 
 # TODO:
-- [x] Create a page for the user to create and input a mapbox API key. This will be used for the terrain data.
-- [x] Allow the page to validate the user's API access token.
-- [x] Store the access token somehow
+- [x] Create a page for the user to create and input an API access token.
+- [x] Store the access token somehow.
 - [x] Create a page to allow the user to choose an airport and runway to begin at.
 - [x] Create the main page where the user can fly the airplane. 
 - [x] Allow the main page to download the terrain.
@@ -20,7 +19,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Rename "findLocation" to setupPage.
 - [x] Allow the clouds to be adjusted in the setup page.
 - [x] Add movement to the clouds.
-- [ ] MIGRATE TO CESIUM.js
+- [x] MIGRATE TO CESIUM.js
 - [ ] Give the tiles building & tree data.
 - [ ] Add a plane 3d model.
 - [ ] Add physics.
