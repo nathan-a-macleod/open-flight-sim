@@ -30,6 +30,10 @@ button:hover{
     cursor: pointer
 }
 
+#cesiumContainer{
+    width: 100vw;
+    height: 100vh;
+}
 
 #APITokenDiv, #setupDiv{
     position: absolute;
