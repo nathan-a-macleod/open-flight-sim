@@ -20,8 +20,8 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Allow the clouds to be adjusted in the setup page.
 - [x] Add movement to the clouds.
 - [x] Migrate to Cesium.js.
-- [ ] Add a reset button.
-- [ ] Add a button to start the game once the chosen location has been chosen.
+- [x] Add a reset button.
+- [ ] Allow the game to switch between flying, and choose a location. Ensure it starts of by allowing the user to switch between these, instead of using the setupSection.
 - [ ] Remove uneeded Cesium.js objects in the canvas.
 - [ ] Add a plane 3d model.
 - [ ] Add physics.
