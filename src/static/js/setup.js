@@ -15,6 +15,10 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
     })
 });
 
+let scene = viewer.scene;
+let camera = viewer.camera;
+scene.fog.enabled = false;
+
 document.getElementsByClassName("cesium-viewer-toolbar")[0].remove();
 document.getElementsByClassName("cesium-viewer-timelineContainer")[0].remove();
 document.getElementsByClassName("cesium-viewer-animationContainer")[0].remove();
@@ -26,7 +30,7 @@ setTimeout(function(){
     document.getElementsByClassName("cesium-viewer-bottom")[0].style.bottom = null;
     document.getElementsByClassName("cesium-viewer-bottom")[0].style.left = "32px";
     document.getElementsByClassName("cesium-viewer-bottom")[0].style.bottom = "32px";
-}, 5000);
+}, 7500);
 
 const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
 
@@ -58,3 +62,6 @@ document.getElementById("resetViewBtn").addEventListener("click", function(){
 });
 
 resetView();
+
+addScript("/static/js/airplane.js");
+addScript("/static/js/renderLoop.js");
