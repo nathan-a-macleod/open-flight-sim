@@ -16,16 +16,42 @@ class Airplane{
         this.rollOffset = 0;
     }
 
+    updateYaw(headingChange){
+        camera.setView({
+            orientation: {
+                heading: camera.heading + headingChange,
+                pitch: camera.pitch,
+                roll: camera.roll
+            }
+        });
+    }
+
+    updatePitch(pitchChange){
+        camera.setView({
+            orientation: {
+                heading: camera.heading,
+                pitch: camera.pitch + pitchChange,
+                roll: camera.roll
+            }
+        });
+    }
+
+    updateRoll(rollChange){
+        camera.setView({
+            orientation: {
+                heading: camera.heading,
+                pitch: camera.pitch,
+                roll: camera.roll + rollChange
+            }
+        });
+    }
+
     update(){
         // Rotate the camera based on user input
         this.rollOffset += Cesium.Math.toRadians(mousePos.x / 200);
-        camera.setView({
-            orientation: {
-                heading : camera.heading + (this.rollOffset / 100),
-                pitch : camera.pitch + Cesium.Math.toRadians(mousePos.y / 250),
-                roll : camera.roll + Cesium.Math.toRadians(mousePos.x / 200)
-            }
-        });
+        this.updateYaw(this.rollOffset / 100);
+        this.updatePitch(Cesium.Math.toRadians(mousePos.y / 250));
+        this.updateRoll(Cesium.Math.toRadians(mousePos.x / 200));
 
         // Increase or decrease the speed based on 
         // whether you're accelerating towards or away from the ground
