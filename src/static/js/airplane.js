@@ -17,9 +17,7 @@ class Airplane{
     }
 
     update(){
-        // Rotate the camera
-        //camera.twistRight(Cesium.Math.toRadians(mousePos.x / 200));
-        //camera.lookUp(Cesium.Math.toRadians(mousePos.y / 250));
+        // Rotate the camera based on user input
         this.roll += Cesium.Math.toRadians(mousePos.x / 200);
         camera.setView({
             orientation: {
