@@ -13,15 +13,17 @@ class Airplane{
         this.cruiseSpeed = cruiseSpeed;
         this.throttle = 75; // Percent
         this.speed_to_units = 0.03;
+        this.roll = 0;
     }
 
     update(){
         // Rotate the camera
         //camera.twistRight(Cesium.Math.toRadians(mousePos.x / 200));
         //camera.lookUp(Cesium.Math.toRadians(mousePos.y / 250));
+        this.roll += Cesium.Math.toRadians(mousePos.x / 200);
         camera.setView({
             orientation: {
-                heading : camera.heading,
+                heading : camera.heading + (this.roll / 100),
                 pitch : camera.pitch + Cesium.Math.toRadians(mousePos.y / 250),
                 roll : camera.roll + Cesium.Math.toRadians(mousePos.x / 200)
             }
