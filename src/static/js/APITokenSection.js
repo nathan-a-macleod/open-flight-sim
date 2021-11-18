@@ -8,11 +8,11 @@ if (sessionStorage.getItem("userAPIToken") == null){
         userAPIToken = APIToken;
         sessionStorage.setItem("userAPIToken", APIToken);
         document.getElementById("APITokenDiv").style.display = "none";
-        document.getElementById("setupDiv").style.display = "block";
-        addScript("/static/js/setupSection.js");
+        document.getElementById("settingsDiv").style.display = "block";
+        addScript("/static/js/UI.js");
     });
 } else {
     userAPIToken = sessionStorage.getItem("userAPIToken");
-    document.getElementById("setupDiv").style.display = "block";
-    addScript("/static/js/setupSection.js");
+    document.getElementById("settingsDiv").style.display = "block";
+    addScript("/static/js/UI.js");
 }

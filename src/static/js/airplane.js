@@ -1,4 +1,4 @@
-let mousePos = {
+mousePos = {
     x: 0,
     y: 0
 }
@@ -12,14 +12,14 @@ class Airplane{
     constructor(cruiseSpeed){
         this.cruiseSpeed = cruiseSpeed;
         this.throttle = 75; // Percent
-        this.speed_to_units = 0.025;
+        this.speed_to_units = 0.020;
         this.rollOffset = 0;
     }
 
-    updateYaw(headingChange){
+    updateYaw(yawChange){
         camera.setView({
             orientation: {
-                heading: camera.heading + headingChange,
+                heading: camera.heading + yawChange,
                 pitch: camera.pitch,
                 roll: camera.roll
             }

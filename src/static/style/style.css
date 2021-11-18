@@ -30,12 +30,12 @@ button:hover{
     cursor: pointer
 }
 
-#cesiumContainer{
+#cesiumDiv{
     width: 100vw;
     height: 100vh;
 }
 
-#APITokenDiv, #setupDiv{
+#APITokenDiv, #settingsDiv{
     position: absolute;
     background-color: #ffffff;
 
@@ -57,27 +57,15 @@ button:hover{
     height: 80vh;
 }
 
-#weatherElem{
-    position: absolute;
-    
-    left: 32px;
-    top: 32px;
+#settingsDiv{
+    width: 100vw;
+    height: 100vh;
+
+    left: 0px;
+    top: 0px;
 }
 
-#fog{
-    display: none; /* Hidden by default */
-    position: absolute;
-    
-    right: 32px;
-    top: 32px;
-    width: 300px;
-
-    color: white !important;
-
-    padding: 16px;
-}
-
-#launchBtn{
+#simulatorBtn{
     position: absolute;
     
     -border-radius: 8px;
@@ -86,6 +74,19 @@ button:hover{
     
     right: 32px;
     top: 32px;
+}
+
+#settingsBtn{
+    position: absolute;
+    
+    -border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    
+    right: 32px;
+    top: 32px;
+
+    z-index: 1;
 }
 
 #resetViewBtn{

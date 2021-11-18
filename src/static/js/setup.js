@@ -1,22 +1,19 @@
-let latCoord = parseFloat(sessionStorage.getItem("latCoord"));
-let lonCoord = parseFloat(sessionStorage.getItem("lonCoord"));
-let weather = parseInt(sessionStorage.getItem("weather"));
-let heading = parseInt(sessionStorage.getItem("heading"));
-
-setTimeout(function(){
-    addScript("/static/js/UI.js");
-}, 1000);
+latCoord = parseFloat(sessionStorage.getItem("latCoord"));
+lonCoord = parseFloat(sessionStorage.getItem("lonCoord"));
+weather = parseInt(sessionStorage.getItem("weather"));
+heading = parseInt(sessionStorage.getItem("heading"));
 
 Cesium.Ion.defaultAccessToken = userAPIToken;
 
-const viewer = new Cesium.Viewer('cesiumContainer', {
+viewer = new Cesium.Viewer("cesiumDiv", {
     terrainProvider : Cesium.createWorldTerrain({
         requestWaterMask : true
     })
 });
 
-let scene = viewer.scene;
-let camera = viewer.camera;
+scene = viewer.scene;
+globe = viewer.scene.globe;
+camera = viewer.camera;
 scene.fog.enabled = false;
 
 document.getElementsByClassName("cesium-viewer-toolbar")[0].remove();
@@ -32,7 +29,7 @@ setTimeout(function(){
     document.getElementsByClassName("cesium-viewer-bottom")[0].style.bottom = "32px";
 }, 7500);
 
-const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
+buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
 
 buildingTileset.style = new Cesium.Cesium3DTileStyle({
     color: {

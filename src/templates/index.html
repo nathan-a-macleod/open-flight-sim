@@ -19,29 +19,18 @@
             }
         </script>
 
-        <div id="cesiumContainer">
-            <button id="resetViewBtn">Reset View</button>
+        <div id="cesiumDiv" style="display: none;">
+            <button id="settingsBtn">Settings</button>
         </div>
 
-        <div id="fog" class="UI">
-            <label>Fog Start: </label>
-            <input type="number" step=0.05 id="fogStart" value=0 style="width: 100%;">
-            <label>Fog End: </label>
-            <input type="number" step=0.05 id="fogEnd" value=1 style="width: 100%;">
-            <input type="checkbox" id="fogCheckmark">Enabled</input>
-        </div>
-
-        <div id="setupDiv" style="display: none;">
-            <div id="weatherElem" class="UI">
-                <label id="weatherText">Weather Quality: 50%</label>
-                <input id="weatherInput" type="range" min=1 max=100 value=50 step=1>
-            </div>
-
+        <div id="settingsDiv" style="display: none;">
             <select id="selectAirport">
 
             </select>
+
+            <button id="resetViewBtn">Reset View</button>
             
-            <button id="launchBtn">Launch!</button>
+            <button id="simulatorBtn">Simulator</button>
         </div>
 
         <div id="APITokenDiv" style="display: none;">
@@ -63,8 +52,7 @@
         </div>
         
         <script type="text/javascript" src="/static/lib/three.min.js"></script>
-        <script type="text/javascript" src="/static/lib/three-geo.min.js"></script>
-        <script type="text/javascript" src="/static/js/APITokenSection.js"></script>
         <script type="text/javascript" src="/static/js/airports.js"></script>
+        <script type="text/javascript" src="/static/js/APITokenSection.js"></script>
     </body>
 </html>
