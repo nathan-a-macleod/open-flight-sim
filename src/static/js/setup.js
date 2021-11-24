@@ -1,3 +1,8 @@
+document.body.addEventListener("keypress", function(event){
+    pressedKey = event.keyCode;
+    console.log(event)
+});
+
 latCoord = parseFloat(sessionStorage.getItem("latCoord"));
 lonCoord = parseFloat(sessionStorage.getItem("lonCoord"));
 weather = parseInt(sessionStorage.getItem("weather"));

@@ -90,10 +90,20 @@ button:hover{
 }
 
 #resetViewBtn{
-    display: none; /* Hidden by default */
     position: absolute;
+
     right: 32px;
     top: 32px;
+
+    z-index: 1;
+}
+
+#pauseBtn{
+    position: absolute;
+
+    left: calc(50vw - 32px);
+    top: 32px;
+
     z-index: 1;
 }
 
