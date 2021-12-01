@@ -48,10 +48,10 @@ class Airplane{
 
     update(){
         // Rotate the camera based on user input
-        this.rollOffset += Cesium.Math.toRadians(mousePos.x / 200);
+        this.rollOffset += Cesium.Math.toRadians(mousePos.x / 400);
         this.updateYaw(this.rollOffset / 100);
-        this.updatePitch(Cesium.Math.toRadians(mousePos.y / 250));
-        this.updateRoll(Cesium.Math.toRadians(mousePos.x / 200));
+        this.updatePitch(Cesium.Math.toRadians(mousePos.y / 500));
+        this.updateRoll(Cesium.Math.toRadians(mousePos.x / 400));
 
         camera.moveForward(this.cruiseSpeed * (this.throttle * 0.01) * this.speed_to_units);
     }

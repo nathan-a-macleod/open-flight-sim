@@ -23,10 +23,9 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Add a reset button.
 - [x] Remove uneeded Cesium.js objects in the canvas.
 - [x] Allow the game to switch between flying, and choose a location. Ensure it starts of by allowing the user to switch between these, instead of using the setupSection.
-- [ ] Allow it to detect a normal keyboard button press, as well as a prolonged  press.
-- [ ] Add a pause button where the user can change the position of the plane.
-- [ ] Change the pause button to a keyboard shortcut.
-- [ ] Change the settings page to an overlay, which pauses the simulator.
+- [x] Add a pause button where the user can change the position of the plane.
+- [x] Change the pause button to a keyboard shortcut.
+- [x] Change the settings page to an overlay.
 - [ ] Add better physics.
 - [ ] Add more CSS variables.
 - [ ] Add a plane 3d model.
