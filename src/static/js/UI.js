@@ -10,8 +10,7 @@ let camera;
 let buildingTileset;
 let mousePos;
 let paused = true;
-let pressedKey = ""; // Detect continuous keypresses across multiple frames
-//let lastPressedKey; // Detect a regular keypress 
+let pressedKey = null;
 
 document.getElementById("settingsDiv").style.display = "block";
 

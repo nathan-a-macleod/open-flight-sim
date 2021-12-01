@@ -1,6 +1,5 @@
-document.body.addEventListener("keypress", function(event){
+document.body.addEventListener("keydown", function(event){
     pressedKey = event.keyCode;
-    console.log(event)
 });
 
 latCoord = parseFloat(sessionStorage.getItem("latCoord"));
