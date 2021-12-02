@@ -109,7 +109,7 @@ button:hover{
 
 #airplaneUI{
     display: none; /* Hidden by default */
-    
+
     position: absolute;
     bottom: calc(56px + 32px);
     right: calc(-56px + 32px);
@@ -137,6 +137,16 @@ button:hover{
     top: calc(32px + 32px + 32px);
     left: 32px;
     z-index: 1;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
 }
 
 .UI{
