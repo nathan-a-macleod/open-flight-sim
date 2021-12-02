@@ -15,12 +15,17 @@ class Airplane{
         this.speed_to_units = 0.025;
         this.rollOffset = 0;
 
-        // Add the throttle
-        document.getElementById("airplaneUI").innerHTML = `
-            <div id="throttle" class="UI">
-                <input type="range" id="throttleInput" min=1 max=100 value=75>
-            </div>
-        `;
+        // Add the UI elements
+        document.getElementById("airplaneUI").innerHTML = '<div id="throttle" class="UI"></div>';
+
+        // The throttle
+        let throttle = document.createElement("input");
+        throttle.setAttribute("type", "range");
+        throttle.setAttribute("id", "throttleInput");
+        throttle.setAttribute("min", "1");
+        throttle.setAttribute("max", "100");
+        throttle.setAttribute("value", "75");
+        document.getElementById("throttle").appendChild(throttle);
     }
 
     updateYaw(yawChange){
