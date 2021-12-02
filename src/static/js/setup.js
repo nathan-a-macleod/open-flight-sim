@@ -38,7 +38,7 @@ buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
 buildingTileset.style = new Cesium.Cesium3DTileStyle({
     color: {
         conditions: [
-            ["true", "color('#7f7b79')"]
+            ["true", "color('#a0968e')"]
         ],
     },
 });
