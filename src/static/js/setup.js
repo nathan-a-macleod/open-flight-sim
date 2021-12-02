@@ -44,7 +44,7 @@ buildingTileset.style = new Cesium.Cesium3DTileStyle({
 });
 
 function resetView(){
-    viewer.camera.flyTo({
+    viewer.camera.setView({
         destination : Cesium.Cartesian3.fromDegrees(
             lonCoord, 
             latCoord, 

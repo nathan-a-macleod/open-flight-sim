@@ -107,6 +107,38 @@ button:hover{
     z-index: 1;
 }
 
+#airplaneUI{
+    display: none; /* Hidden by default */
+    
+    position: absolute;
+    bottom: calc(56px + 32px);
+    right: calc(-56px + 32px);
+    z-index: 1;
+    transform: rotate(-90deg);
+}
+
+#airplaneCanvas{
+    position: absolute;
+}
+
+#helpBtn{
+    position: absolute;
+    left: 32px;
+    top: 32px;
+    z-index: 1;
+}
+
+#helpDiv{
+    display: none; /* Hidden by default */
+
+    width: 40vw;
+    height: 40vh;
+    position: absolute;
+    top: calc(32px + 32px + 32px);
+    left: 32px;
+    z-index: 1;
+}
+
 .UI{
     -border-radius: 8px;
     -webkit-border-radius: 8px;

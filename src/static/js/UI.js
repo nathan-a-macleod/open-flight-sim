@@ -44,3 +44,14 @@ function addAirport(airportData){
 }
   
 Object.values(airports).forEach(val => addAirport(val));
+
+// Make the help button work
+let helpDiv = document.getElementById("helpDiv");
+
+document.getElementById("helpBtn").addEventListener("click", function(){
+    if (helpDiv.style.display == "block"){
+        helpDiv.style.display = "none";
+    } else {
+        helpDiv.style.display = "block";
+    }
+});
