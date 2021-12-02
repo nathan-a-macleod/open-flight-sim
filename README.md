@@ -26,10 +26,11 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Add a pause button where the user can change the position of the plane.
 - [x] Change the pause button to a keyboard shortcut.
 - [x] Change the settings page to an overlay.
-- [ ] Add better physics.
 - [ ] Add more CSS variables.
 - [ ] Add a plane 3d model.
+- [ ] Add 3d particle based clouds.
 - [ ] Add more settings to the clouds in the setup page - a proper weather engine.
+- [ ] Add better physics.
 - [ ] Allow the plane to collide with the terrain.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
 - [ ] Add weather & realistic lighting.
