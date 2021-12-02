@@ -58,8 +58,8 @@ class Airplane{
         let UIThrottleVal = parseInt(document.getElementById("throttleInput").value);
         let UIThrottle = document.getElementById("throttleInput");
         
-        if (UIThrottleVal < this.throttle) this.throttle -= UIThrottleVal / 6;
-        if (UIThrottleVal > this.throttle) this.throttle += UIThrottleVal / 60;
+        if (UIThrottleVal < this.throttle) this.throttle -= UIThrottleVal / 12;
+        if (UIThrottleVal > this.throttle) this.throttle += UIThrottleVal / 100;
         if (this.throttle > 100) this.throttle = 100;
         if (this.throttle < 1) this.throttle = 1;
 
