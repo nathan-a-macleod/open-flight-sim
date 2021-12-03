@@ -15,7 +15,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Allow the user to choose the radius of the tile.
 - [x] Add an option for the user to add & customise fog.
 - [x] Give the program an active tile - and a secondry tile to be in the background.
-- [x] Add 3d particle clouds.
+- [ ] Add 3d particle clouds.
 - [x] Rename "findLocation" to setupPage.
 - [x] Allow the clouds to be adjusted in the setup page.
 - [x] Add movement to the clouds.
