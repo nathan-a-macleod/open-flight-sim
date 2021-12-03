@@ -29,7 +29,7 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Add a plane 3d model.
 - [x] Change the pause hotkey to "p".
 - [x] Add a throttle.
-- [ ] Add a speed indicator
+- [x] Add a speed indicator.
 - [ ] Integrate the plane 3d model in a separate canvas.
 - [ ] Add more CSS variables.
 - [ ] Add 3d particle based clouds.
