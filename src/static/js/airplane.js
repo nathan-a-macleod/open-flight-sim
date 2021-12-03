@@ -12,7 +12,7 @@ class Airplane{
     constructor(cruiseSpeed){
         this.cruiseSpeed = cruiseSpeed;
         this.throttle = 75; // Percent
-        this.speed_to_units = 0.025;
+        this.speed_to_units = 0.020;
         this.rollOffset = 0;
 
         // Add the UI elements
@@ -63,8 +63,8 @@ class Airplane{
         let UIThrottleVal = parseInt(document.getElementById("throttleInput").value);
         let UIThrottle = document.getElementById("throttleInput");
         
-        if (UIThrottleVal < this.throttle) this.throttle -= UIThrottleVal / 12;
-        if (UIThrottleVal > this.throttle) this.throttle += UIThrottleVal / 100;
+        if (UIThrottleVal < this.throttle) this.throttle -= UIThrottleVal / 20;
+        if (UIThrottleVal > this.throttle) this.throttle += UIThrottleVal / 120;
         if (this.throttle > 100) this.throttle = 100;
         if (this.throttle < 1) this.throttle = 1;
 
@@ -82,7 +82,7 @@ class Airplane{
 
         // Rotate the camera based on user input
         this.rollOffset += Cesium.Math.toRadians(mousePos.x / 400);
-        this.updateYaw(this.rollOffset / 150);
+        this.updateYaw(this.rollOffset / 225);
         this.updatePitch(Cesium.Math.toRadians(mousePos.y / 500));
         this.updateRoll(Cesium.Math.toRadians(mousePos.x / 400));
 
