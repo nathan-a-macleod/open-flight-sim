@@ -36,7 +36,6 @@ class Airplane{
         document.getElementById("airplaneUI").appendChild(speedIndicator);
 
         this.speedIndicatorHTML = speedIndicator;
-
     }
 
     updateYaw(yawChange){

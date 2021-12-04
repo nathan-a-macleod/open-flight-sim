@@ -31,10 +31,12 @@ A project to create a fully functioning, open source flight simulator with good 
 - [x] Add a throttle.
 - [x] Add a speed indicator.
 - [ ] Integrate the plane 3d model in a separate canvas.
+- [ ] Add a shadow under the plane.
 - [ ] Add more CSS variables.
 - [ ] Add 3d particle based clouds.
 - [ ] Add more settings to the clouds in the setup page - a proper weather engine.
 - [ ] Add better physics.
+- [ ] Prevent the camera from going underground.
 - [ ] Allow the plane to collide with the terrain.
 - [ ] Add UI features - a throttle, a speed guage, an artificial horizon, etc.
 - [ ] Add weather & realistic lighting.
